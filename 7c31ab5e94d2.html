@@ -91,7 +91,9 @@ h2{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--dim);
 </div>
 
 <script>
-const CSV='https://docs.google.com/spreadsheets/d/e/2PACX-1vTlIslnx1ljmmVouS0o0_j6c2KDFtUSTFRBAXxDUNMWlqzKnMQhb1SuUWQNUWtkcbbyBdNr4_LtexsK/pub?output=csv';
+// gviz は即時反映。pub は保険（gviz が落ちたときだけ使う）
+const LIVE='https://docs.google.com/spreadsheets/d/14qGuw3IRL4Hg_IqmITXiSlS49W7PjNwSzOuis_PS0Oc/gviz/tq?tqx=out:csv&gid=1479722645';
+const BACKUP='https://docs.google.com/spreadsheets/d/e/2PACX-1vTlIslnx1ljmmVouS0o0_j6c2KDFtUSTFRBAXxDUNMWlqzKnMQhb1SuUWQNUWtkcbbyBdNr4_LtexsK/pub?output=csv';
 
 function parseCSV(t){
   const rows=[]; let f='',r=[],q=false;
@@ -119,7 +121,8 @@ function tag(r){
 }
 
 function load(){
-  fetch(CSV+'&t='+Date.now()).then(r=>r.text()).then(txt=>{
+  const get=u=>fetch(u+'&t='+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.text(); });
+  get(LIVE).catch(()=>get(BACKUP)).then(txt=>{
     const rows=parseCSV(txt);
     if(rows.length<1){ document.getElementById('head').textContent='データなし'; return; }
     const h=rows[0], idx=n=>h.indexOf(n);
