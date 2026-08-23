@@ -123,6 +123,8 @@ header.top{position:sticky;top:0;z-index:20;background:var(--ground);
 .card[data-result="アポ"] .rt{color:var(--ok)}
 
 .rep{margin-top:10px}
+#q{color:var(--warn,#f0a);font-weight:700}
+
 .repbtn{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
   background:var(--card);color:var(--fg);font:inherit;font-weight:700;font-size:15px}
 .repbtn:active{opacity:.7}
@@ -3103,12 +3105,52 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
 </div>
 
 <p class="foot">全200件、渡す直前に1件ずつ再確認済み。<br>
-結果はこの端末に保存されます。1日の終わりに上の「結果をコピー」で宮崎さんへ送ってください。</p>
+結果ボタンを押すと自動で宮崎さんに送信されます。<span id="q"></span></p>
 </div></div>
 
 <script>
 function today(){const d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
 const KEY='wakita-c-200';
+const QKEY='wakita-c-queue';
+const WHO='脇田';
+const FORM='https://docs.google.com/forms/d/e/1FAIpQLSfhpkW89vWEFWjkrgWr1qx0UXhHTjksiSmCa9IOyfcJcQO8bQ/formResponse';
+const F={who:'entry.918375088',name:'entry.752989491',tel:'entry.729330221',
+         res:'entry.1257351313',memo:'entry.1976499710',no:'entry.103122825'};
+
+function qGet(){ try{ return JSON.parse(localStorage.getItem(QKEY)||'[]'); }catch(e){ return []; } }
+function qSet(a){ try{ localStorage.setItem(QKEY, JSON.stringify(a)); }catch(e){} qShow(); }
+function qShow(){
+  const n=qGet().length, el=document.getElementById('q');
+  if(el) el.textContent = n ? '（未送信 '+n+'件。電波が戻ると自動で送られます）' : '';
+}
+
+function enqueue(card, result){
+  qSet(qGet().concat([{
+    no: card.dataset.i,
+    name: card.querySelector('h2').textContent.trim(),
+    tel: card.querySelector('.tel').textContent.trim(),
+    res: result,
+    memo: card.querySelector('.memo').value || ''
+  }]));
+  flush();
+}
+
+let sending=false;
+function flush(){
+  if(sending) return;
+  const q=qGet(); if(!q.length){ qShow(); return; }
+  sending=true;
+  const x=q[0];
+  const b=new URLSearchParams();
+  b.append(F.who,WHO); b.append(F.name,x.name); b.append(F.tel,x.tel);
+  b.append(F.res,x.res); b.append(F.memo,x.memo); b.append(F.no,x.no);
+  fetch(FORM,{method:'POST',mode:'no-cors',body:b})
+    .then(()=>{ qSet(qGet().slice(1)); sending=false; flush(); })
+    .catch(()=>{ sending=false; });
+}
+window.addEventListener('online', flush);
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) flush(); });
+
 function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
 function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){} }
 function put(i,k,v){ const o=load(); o[i]=o[i]||{}; o[i][k]=v; save(o); }
@@ -3120,6 +3162,7 @@ function mark(b){
   c.querySelector('.rt').textContent = b.dataset.v;
   c.querySelector('.rd').textContent = d;
   put(c.dataset.i,'r',b.dataset.v); put(c.dataset.i,'d',d);
+  enqueue(c, b.dataset.v);
   count();
 }
 function undo(b){
@@ -3128,9 +3171,15 @@ function undo(b){
   c.querySelector('.rt').textContent='';
   c.querySelector('.rd').textContent='';
   put(c.dataset.i,'r',''); put(c.dataset.i,'d','');
+  enqueue(c, '取消');
   count();
 }
-function memo(i){ i.setAttribute('value', i.value); put(i.closest('.card').dataset.i,'m',i.value); }
+function memo(i){
+  const c=i.closest('.card');
+  i.setAttribute('value', i.value);
+  put(c.dataset.i,'m',i.value);
+  if(c.getAttribute('data-result')) enqueue(c, c.getAttribute('data-result'));
+}
 
 function restore(){
   const o=load();
@@ -3190,6 +3239,8 @@ function count(){
 }
 restore();
 count();
+qShow();
+flush();
 </script>
 </body>
 </html>

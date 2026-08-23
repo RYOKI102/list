@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>架電状況</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@700&display=swap">
+<style>
+:root{
+  --bg:#f4f5f3; --card:#ffffff; --line:#dcded8; --fg:#171a16; --dim:#6d7269;
+  --ok:#0f8a5f; --okbg:#e4f4ec; --ng:#c2453a; --ngbg:#fbe9e7; --key:#0d6b4d;
+  --shadow:0 1px 2px rgba(20,24,18,.06),0 8px 20px rgba(20,24,18,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e100d; --card:#171a15; --line:#2a2e27; --fg:#eef0ea; --dim:#8f958a;
+    --ok:#4fd39a; --okbg:#10281f; --ng:#ff8a7a; --ngbg:#2a1512; --key:#4fd39a;
+    --shadow:0 1px 2px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e100d; --card:#171a15; --line:#2a2e27; --fg:#eef0ea; --dim:#8f958a;
+  --ok:#4fd39a; --okbg:#10281f; --ng:#ff8a7a; --ngbg:#2a1512; --key:#4fd39a;
+  --shadow:0 1px 2px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+  font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:26px;font-weight:900;letter-spacing:-.01em;margin:0 0 2px;text-wrap:balance}
+.sub{color:var(--dim);font-size:13px;margin:0 0 18px}
+.sub b{color:var(--fg);font-weight:700}
+h2{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--dim);
+  margin:30px 0 10px;text-transform:none}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);overflow:hidden}
+.who{padding:14px 16px}
+.who+.who{border-top:1px solid var(--line)}
+.whoname{font-weight:700;font-size:17px;margin-bottom:8px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.n{text-align:center}
+.n b{display:block;font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.n span{font-size:11px;color:var(--dim)}
+.n.a b{color:var(--ok)} .n.x b{color:var(--ng)}
+.row{padding:12px 16px;border-top:1px solid var(--line);
+  display:flex;gap:12px;align-items:baseline}
+.row:first-child{border-top:0}
+.rn{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--dim);
+  min-width:34px;font-variant-numeric:tabular-nums}
+.rb{flex:1;min-width:0}
+.rc{font-weight:700;overflow-wrap:anywhere}
+.rm{font-size:13px;color:var(--dim);overflow-wrap:anywhere}
+.tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.t-a{background:var(--okbg);color:var(--ok)}
+.t-n{background:var(--ngbg);color:var(--ng)}
+.t-o{background:var(--bg);color:var(--dim);border:1px solid var(--line)}
+.tel{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--dim)}
+.empty{padding:22px 16px;color:var(--dim);font-size:14px;text-align:center}
+.foot{margin-top:26px;font-size:12px;color:var(--dim);text-align:center}
+.rel{margin-top:10px;width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);font:inherit;font-weight:700;font-size:14px;box-shadow:var(--shadow)}
+.rel:active{opacity:.7}
+.scroll{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>架電状況</h1>
+<p class="sub" id="head">読み込み中…</p>
+
+<h2>今日</h2>
+<div class="box" id="today"><p class="empty">…</p></div>
+
+<h2>アポ</h2>
+<div class="box" id="apo"><p class="empty">…</p></div>
+
+<h2>決裁者と話した</h2>
+<div class="box" id="kes"><p class="empty">…</p></div>
+
+<h2>直近の動き</h2>
+<div class="box" id="log"><p class="empty">…</p></div>
+
+<button class="rel" onclick="load()">最新に更新</button>
+<p class="foot">60秒ごとに自動更新</p>
+</div>
+
+<script>
+const CSV='https://docs.google.com/spreadsheets/d/e/2PACX-1vTlIslnx1ljmmVouS0o0_j6c2KDFtUSTFRBAXxDUNMWlqzKnMQhb1SuUWQNUWtkcbbyBdNr4_LtexsK/pub?output=csv';
+
+function parseCSV(t){
+  const rows=[]; let f='',r=[],q=false;
+  for(let i=0;i<t.length;i++){
+    const c=t[i];
+    if(q){ if(c==='"'){ if(t[i+1]==='"'){f+='"';i++;} else q=false; } else f+=c; }
+    else if(c==='"') q=true;
+    else if(c===','){ r.push(f); f=''; }
+    else if(c==='\n'){ r.push(f); rows.push(r); r=[]; f=''; }
+    else if(c!=='\r') f+=c;
+  }
+  if(f||r.length){ r.push(f); rows.push(r); }
+  return rows;
+}
+function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function d2(n){ return n<10?'0'+n:''+n; }
+function ymd(s){ return (s||'').split(' ')[0].replace(/-/g,'/'); }
+function hm(s){ const p=(s||'').split(' ')[1]||''; return p.slice(0,5); }
+function todayStr(){ const d=new Date(); return d.getFullYear()+'/'+d2(d.getMonth()+1)+'/'+d2(d.getDate()); }
+
+function tag(r){
+  if(r==='アポ') return '<span class="tag t-a">アポ</span>';
+  if(r==='NG') return '<span class="tag t-n">NG</span>';
+  return '<span class="tag t-o">'+esc(r)+'</span>';
+}
+
+function load(){
+  fetch(CSV+'&t='+Date.now()).then(r=>r.text()).then(txt=>{
+    const rows=parseCSV(txt);
+    if(rows.length<1){ document.getElementById('head').textContent='データなし'; return; }
+    const h=rows[0], idx=n=>h.indexOf(n);
+    const iT=idx('タイムスタンプ'), iW=idx('担当'), iN=idx('会社名'),
+          iP=idx('電話'), iR=idx('結果'), iM=idx('メモ'), iNo=idx('番号');
+    const all=rows.slice(1).filter(r=>r.length>=4&&r[iT]).map(r=>({
+      t:r[iT], who:r[iW]||'', name:r[iN]||'', tel:r[iP]||'',
+      res:r[iR]||'', memo:r[iM]||'', no:r[iNo]||''
+    }));
+
+    // 会社ごとに最新だけ残す
+    const latest=new Map();
+    all.forEach(x=>latest.set(x.who+'/'+x.no, x));
+    const cur=[...latest.values()].filter(x=>x.res&&x.res!=='取消');
+
+    // 今日
+    const td=todayStr();
+    const byWho=new Map();
+    cur.forEach(x=>{
+      const k=x.who||'（無記名）';
+      if(!byWho.has(k)) byWho.set(k,{all:[],today:[]});
+      byWho.get(k).all.push(x);
+      if(ymd(x.t)===td) byWho.get(k).today.push(x);
+    });
+    const c=(a,v)=>a.filter(x=>x.res===v).length;
+    let html='';
+    [...byWho.entries()].sort((a,b)=>b[1].today.length-a[1].today.length).forEach(([k,v])=>{
+      const t=v.today;
+      html+='<div class="who"><div class="whoname">'+esc(k)+'さん'
+        +'<span style="font-weight:400;font-size:13px;color:var(--dim)">　累計 '+v.all.length+'件</span></div>'
+        +'<div class="nums">'
+        +'<div class="n"><b>'+t.length+'</b><span>今日の架電</span></div>'
+        +'<div class="n a"><b>'+c(t,'アポ')+'</b><span>アポ</span></div>'
+        +'<div class="n"><b>'+c(t,'決裁者と話した')+'</b><span>決裁者</span></div>'
+        +'<div class="n x"><b>'+c(t,'NG')+'</b><span>NG</span></div>'
+        +'</div></div>';
+    });
+    document.getElementById('today').innerHTML = html || '<p class="empty">まだ架電がありません</p>';
+
+    const list=(arr,emptyMsg)=>{
+      if(!arr.length) return '<p class="empty">'+emptyMsg+'</p>';
+      return arr.map(x=>'<div class="row"><span class="rn">'+esc(ymd(x.t).slice(5))+'</span>'
+        +'<span class="rb"><span class="rc">'+esc(x.name)+'</span>'
+        +'<br><span class="tel">'+esc(x.tel)+'</span>'
+        +'<span class="rm">'+(x.memo?'　'+esc(x.memo):'')+'</span>'
+        +'<br><span class="rm">'+esc(x.who)+'さん</span></span></div>').join('');
+    };
+    const byNew=(a,b)=>b.t.localeCompare(a.t);
+    document.getElementById('apo').innerHTML = list(cur.filter(x=>x.res==='アポ').sort(byNew),'まだアポはありません');
+    document.getElementById('kes').innerHTML = list(cur.filter(x=>x.res==='決裁者と話した').sort(byNew),'まだありません');
+
+    const log=all.slice().sort(byNew).slice(0,40);
+    document.getElementById('log').innerHTML = log.length
+      ? log.map(x=>'<div class="row"><span class="rn">'+esc(hm(x.t))+'</span>'
+          +'<span class="rb"><span class="rc">'+esc(x.name)+'</span>'
+          +(x.memo?'<br><span class="rm">'+esc(x.memo)+'</span>':'')
+          +'<br><span class="rm">'+esc(x.who)+'さん</span></span>'
+          +tag(x.res)+'</div>').join('')
+      : '<p class="empty">まだ動きがありません</p>';
+
+    const n=new Date();
+    document.getElementById('head').innerHTML='最終更新 '+d2(n.getHours())+':'+d2(n.getMinutes())
+      +'　<b>'+cur.length+'</b>件が記録済み';
+  }).catch(()=>{
+    document.getElementById('head').textContent='読み込めませんでした。電波を確認して「最新に更新」を押してください。';
+  });
+}
+load();
+setInterval(load,60000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) load(); });
+</script>
+</body>
+</html>
