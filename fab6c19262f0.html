@@ -122,6 +122,10 @@ header.top{position:sticky;top:0;z-index:20;background:var(--ground);
 .card[data-result="アポ"] .done{background:var(--ok-soft);border-color:var(--ok)}
 .card[data-result="アポ"] .rt{color:var(--ok)}
 
+.rep{margin-top:10px}
+.repbtn{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);font:inherit;font-weight:700;font-size:15px}
+.repbtn:active{opacity:.7}
 /* 画面切替と絞り込みは閲覧者ごと（data-local-*） */
 #app[data-local-view="list"] #rules{display:none}
 #app[data-local-view="rules"] #list,
@@ -196,6 +200,7 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
     <button class="tab" data-f="all" aria-pressed="false" onclick="flt(this)">全件</button>
   </div>
   </artifact-local>
+  <div class="rep"><button class="repbtn" onclick="report(this)">結果をコピー（宮崎さんに送る用）</button></div>
 </header>
 
 <div id="rules">
@@ -3098,16 +3103,23 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
 </div>
 
 <p class="foot">全200件、渡す直前に1件ずつ再確認済み。<br>
-結果ボタンを押すと保存され、宮崎さんの画面にも反映されます。</p>
+結果はこの端末に保存されます。1日の終わりに上の「結果をコピー」で宮崎さんへ送ってください。</p>
 </div></div>
 
 <script>
 function today(){const d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+const KEY='wakita-c-200';
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){} }
+function put(i,k,v){ const o=load(); o[i]=o[i]||{}; o[i][k]=v; save(o); }
+
 function mark(b){
   const c=b.closest('.card');
+  const d=today();
   c.setAttribute('data-result', b.dataset.v);
   c.querySelector('.rt').textContent = b.dataset.v;
-  c.querySelector('.rd').textContent = today();
+  c.querySelector('.rd').textContent = d;
+  put(c.dataset.i,'r',b.dataset.v); put(c.dataset.i,'d',d);
   count();
 }
 function undo(b){
@@ -3115,9 +3127,47 @@ function undo(b){
   c.setAttribute('data-result','');
   c.querySelector('.rt').textContent='';
   c.querySelector('.rd').textContent='';
+  put(c.dataset.i,'r',''); put(c.dataset.i,'d','');
   count();
 }
-function memo(i){ i.setAttribute('value', i.value); }
+function memo(i){ i.setAttribute('value', i.value); put(i.closest('.card').dataset.i,'m',i.value); }
+
+function restore(){
+  const o=load();
+  document.querySelectorAll('.card').forEach(c=>{
+    const x=o[c.dataset.i]; if(!x) return;
+    if(x.r){ c.setAttribute('data-result',x.r);
+      c.querySelector('.rt').textContent=x.r;
+      c.querySelector('.rd').textContent=x.d||''; }
+    if(x.m){ const i=c.querySelector('.memo'); i.value=x.m; i.setAttribute('value',x.m); }
+  });
+}
+
+function report(btn){
+  const cards=[...document.querySelectorAll('.card')].filter(c=>c.getAttribute('data-result'));
+  if(!cards.length){ btn.textContent='まだ結果がありません'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); return; }
+  const cnt=v=>cards.filter(c=>c.getAttribute('data-result')===v).length;
+  let t='【脇田】'+today()+' 架電結果\n';
+  t+='架電 '+cards.length+'／アポ '+cnt('アポ')+'／決裁者 '+cnt('決裁者と話した')+'／NG '+cnt('NG')+'\n';
+  const pick=cards.filter(c=>['アポ','決裁者と話した'].includes(c.getAttribute('data-result')) || c.querySelector('.memo').value);
+  if(pick.length){
+    t+='\n';
+    pick.forEach(c=>{
+      const m=c.querySelector('.memo').value;
+      t+='・'+c.querySelector('h2').textContent.trim()+'（'+c.getAttribute('data-result')+'）'+(m?' '+m:'')+'\n';
+    });
+  }
+  const done=()=>{ btn.textContent='コピーしました'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); };
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,()=>fb(t,done)); }
+  else fb(t,done);
+}
+function fb(t,cb){
+  const a=document.createElement('textarea'); a.value=t;
+  a.style.cssText='position:fixed;top:0;left:0;opacity:0';
+  document.body.appendChild(a); a.focus(); a.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(a); cb();
+}
 function flt(b){
   document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-pressed','false'));
   b.setAttribute('aria-pressed','true');
@@ -3138,6 +3188,7 @@ function count(){
   document.getElementById('s-ng').textContent=done.filter(c=>c.getAttribute('data-result')==='NG').length;
   document.getElementById('s-bar').style.width=(done.length/cards.length*100)+'%';
 }
+restore();
 count();
 </script>
 </body>
