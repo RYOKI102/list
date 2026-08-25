@@ -137,6 +137,13 @@ header.top{position:sticky;top:0;z-index:20;background:var(--ground);
 .card[data-result="アポ"] .done{background:var(--ok-soft);border-color:var(--ok)}
 .card[data-result="アポ"] .rt{color:var(--ok)}
 
+.moved{margin:0 0 16px;padding:16px;border-radius:12px;
+  background:var(--dead-soft);border:2px solid var(--dead-line)}
+.moved>b{display:block;font-size:17px;color:var(--dead);margin-bottom:6px}
+.moved p{margin:0 0 10px;font-size:13.5px;line-height:1.7;color:var(--ink)}
+.moved .mn{margin:8px 0 0;font-size:12px;color:var(--muted)}
+.movego{display:block;text-align:center;padding:13px;border-radius:10px;
+  background:var(--accent);color:#fff;font-weight:700;text-decoration:none;font-size:15px}
 .rep{margin-top:10px}
 #q{color:var(--warn,#f0a);font-weight:700}
 
@@ -202,6 +209,14 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
   <p class="gateerr" id="whoerr"></p>
 </div></div>
 <div class="wrap"><div id="app" data-local-view="list">
+<div class="moved">
+<b>このリストは使わないでください</b>
+<p>こちらの確認不足で、「実は新しいURLでサイトがある」会社が半分近く混ざっていました。
+申し訳ありませんでした。検証し直した新しいリストに差し替えています。</p>
+<a class="movego" href="https://ryoki102.github.io/list/b83d7e15a4c9.html">新しいリストを開く →</a>
+<p class="mn">ここまでの記録は残っています。消えません。</p>
+</div>
+
 <header class="top">
   <div class="title"><h1>ホームページが消えた200社</h1>
     <span class="who"><b id="whoname">—</b>｜介護・関西中心　<button class="whoedit" onclick="askWho(1)">名前を変える</button></span></div>
@@ -317,10 +332,19 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
 </section>
 
 <section class="blk">
-<h3>1日の回し方</h3>
-<p>午前 9:30-12:00　40件／午後 13:30-17:00　60件</p>
-<p class="note">100件かけて、決裁者と話せるのが15件前後、アポ3〜5件、受注1件前後。
-1件決まれば20,000円。</p>
+<h3>1日の回し方と、期待値</h3>
+<p>午前 9:30-12:00　／　午後 13:30-17:00</p>
+<p class="note"><b>お詫びと訂正です。</b>
+ここには以前「100件かけてアポ3〜5件、受注1件前後」と書いていましたが、
+<b>あれはこちらが書いた数字で、盛りすぎでした。</b>
+一般的な法人テレアポのアポ率は1〜3%です。</p>
+<p>100件かけると、だいたいこうなります。</p>
+<p>・つながる　60〜70件<br>
+・決裁者と話せる　15〜25件<br>
+・アポ　<b>1〜3件</b><br>
+・受注　2ヶ月に1件くらい</p>
+<p class="note"><b>最初の100件でアポ0件は、まったく普通です。</b>
+ここで折れる人が一番多いのですが、数字が動き出すのは200〜300件を超えてからです。</p>
 </section>
 </div>
 
@@ -3127,7 +3151,7 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
 </article>
 </div>
 
-<p class="foot">全200件、渡す直前に1件ずつ再確認済み。<br>
+<p class="foot">このリストは検証不足でした。新しいリストに移ってください。<br>
 結果ボタンを押すと自動で宮崎さんに送信されます。<span id="q"></span></p>
 </div></div>
 
