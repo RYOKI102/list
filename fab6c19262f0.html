@@ -54,6 +54,21 @@ header.top{position:sticky;top:0;z-index:20;background:var(--ground);
 .title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .title h1{margin:0;font-size:18px;font-weight:900;letter-spacing:.01em}
 .title .who{font-size:12.5px;color:var(--muted)}
+.whoedit{font:inherit;font-size:12px;color:var(--accent-ink);background:none;
+  border:0;border-bottom:1px solid var(--line);padding:0 1px;cursor:pointer}
+#gate{position:fixed;inset:0;z-index:99;background:var(--ground);
+  display:none;align-items:center;justify-content:center;padding:24px}
+#gate.on{display:flex}
+.gatebox{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;box-shadow:var(--shadow);padding:24px}
+.gatebox h2{font-size:20px;font-weight:900;margin:0 0 6px}
+.gatebox p{font-size:13.5px;color:var(--muted);margin:0 0 16px;line-height:1.7}
+#whoin{width:100%;padding:14px;font:inherit;font-size:17px;border:2px solid var(--line);
+  border-radius:10px;background:var(--raise);color:var(--ink)}
+#whoin:focus{outline:none;border-color:var(--accent)}
+.gatego{width:100%;margin-top:12px;padding:14px;font:inherit;font-size:16px;font-weight:700;
+  border:0;border-radius:10px;background:var(--accent);color:#fff}
+.gateerr{font-size:13px;color:var(--dead);margin-top:8px;min-height:1.2em}
 .views{display:flex;gap:8px;margin-top:11px}
 .view{flex:1;padding:10px 0;text-align:center;font:inherit;font-size:14px;font-weight:700;
   border:2px solid var(--line);background:var(--surface);color:var(--muted);
@@ -178,10 +193,18 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
 <body>
 
 
+<div id="gate"><div class="gatebox">
+  <h2>お名前を入れてください</h2>
+  <p>誰の架電かを記録するために使います。<br>
+     この端末に保存されるので、次からは聞かれません。</p>
+  <input id="whoin" type="text" placeholder="例：脇田" autocomplete="name">
+  <button class="gatego" onclick="saveWho()">はじめる</button>
+  <p class="gateerr" id="whoerr"></p>
+</div></div>
 <div class="wrap"><div id="app" data-local-view="list">
 <header class="top">
   <div class="title"><h1>ホームページが消えた200社</h1>
-    <span class="who">脇田さん｜介護・関西中心</span></div>
+    <span class="who"><b id="whoname">—</b>｜介護・関西中心　<button class="whoedit" onclick="askWho(1)">名前を変える</button></span></div>
   <artifact-local>
   <div class="views">
     <button class="view" data-v="list" aria-pressed="true" onclick="vw(this)">リスト</button>
@@ -3112,7 +3135,38 @@ q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
 function today(){const d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
 const KEY='wakita-c-200';
 const QKEY='wakita-c-queue';
-const WHO='脇田';
+const WKEY='call-who';
+let WHO = (localStorage.getItem(WKEY)||'').trim();
+// すでにこの端末で架電記録がある人は、名前を聞かずに脇田さんとして続行する
+if(!WHO){
+  try{
+    const had=JSON.parse(localStorage.getItem(KEY)||'{}');
+    if(Object.keys(had).length){ WHO='脇田'; localStorage.setItem(WKEY,WHO); }
+  }catch(e){}
+}
+
+function showWho(){
+  document.getElementById('whoname').textContent = WHO ? WHO+'さん' : '—';
+}
+function askWho(manual){
+  const g=document.getElementById('gate');
+  document.getElementById('whoin').value = manual ? WHO : '';
+  document.getElementById('whoerr').textContent='';
+  g.classList.add('on');
+  setTimeout(()=>document.getElementById('whoin').focus(),50);
+}
+function saveWho(){
+  const v=document.getElementById('whoin').value.trim();
+  if(v.length<1){ document.getElementById('whoerr').textContent='お名前を入れてください。'; return; }
+  if(v.length>20){ document.getElementById('whoerr').textContent='短めでお願いします（20文字まで）。'; return; }
+  WHO=v; try{ localStorage.setItem(WKEY,v); }catch(e){}
+  document.getElementById('gate').classList.remove('on');
+  showWho();
+  flush();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter' && document.getElementById('gate').classList.contains('on')) saveWho();
+});
 const FORM='https://docs.google.com/forms/d/e/1FAIpQLSfhpkW89vWEFWjkrgWr1qx0UXhHTjksiSmCa9IOyfcJcQO8bQ/formResponse';
 const F={who:'entry.918375088',name:'entry.752989491',tel:'entry.729330221',
          res:'entry.1257351313',memo:'entry.1976499710',no:'entry.103122825'};
@@ -3137,7 +3191,7 @@ function enqueue(card, result){
 
 let sending=false;
 function flush(){
-  if(sending) return;
+  if(sending || !WHO) return;
   const q=qGet(); if(!q.length){ qShow(); return; }
   sending=true;
   const x=q[0];
@@ -3196,7 +3250,7 @@ function report(btn){
   const cards=[...document.querySelectorAll('.card')].filter(c=>c.getAttribute('data-result'));
   if(!cards.length){ btn.textContent='まだ結果がありません'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); return; }
   const cnt=v=>cards.filter(c=>c.getAttribute('data-result')===v).length;
-  let t='【脇田】'+today()+' 架電結果\n';
+  let t='【'+(WHO||'担当')+'】'+today()+' 架電結果\n';
   t+='架電 '+cards.length+'／アポ '+cnt('アポ')+'／決裁者 '+cnt('決裁者と話した')+'／NG '+cnt('NG')+'\n';
   const pick=cards.filter(c=>['アポ','決裁者と話した'].includes(c.getAttribute('data-result')) || c.querySelector('.memo').value);
   if(pick.length){
@@ -3240,7 +3294,8 @@ function count(){
 restore();
 count();
 qShow();
-flush();
+showWho();
+if(WHO){ flush(); } else { askWho(0); }
 </script>
 </body>
 </html>
