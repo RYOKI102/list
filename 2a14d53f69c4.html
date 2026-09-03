@@ -1,0 +1,2811 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>1次産業　四国　148件</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --ground:#E9EEEB; --surface:#FFFFFF; --raise:#F6F9F7;
+  --line:#BFCCC5; --line-soft:#D9E2DD;
+  --ink:#0D1714; --muted:#44534C; --faint:#6B7A73;
+  --accent:#0F5A42; --accent-ink:#0F5A42; --accent-soft:#D5E8DF;
+  --dead:#93321F; --dead-soft:#F9E4DE; --dead-line:#D9A091;
+  --ok:#166B41; --ok-soft:#D3EBDD;
+  --ng:#93321F;
+  --shadow:0 1px 2px rgba(13,23,20,.10),0 6px 16px rgba(13,23,20,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1210; --surface:#1A2320; --raise:#222D29;
+    --line:#3A4842; --line-soft:#2C3833;
+    --ink:#F0F5F2; --muted:#B6C4BD; --faint:#8595 8E;
+    --faint:#8B9A93;
+    --accent:#67D6AE; --accent-ink:#67D6AE; --accent-soft:#13332A;
+    --dead:#F4A08A; --dead-soft:#33201B; --dead-line:#7A4033;
+    --ok:#71D69B; --ok-soft:#15321F;
+    --ng:#F4A08A;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 6px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1210; --surface:#1A2320; --raise:#222D29;
+  --line:#3A4842; --line-soft:#2C3833;
+  --ink:#F0F5F2; --muted:#B6C4BD; --faint:#8B9A93;
+  --accent:#67D6AE; --accent-ink:#67D6AE; --accent-soft:#13332A;
+  --dead:#F4A08A; --dead-soft:#33201B; --dead-line:#7A4033;
+  --ok:#71D69B; --ok-soft:#15321F;
+  --ng:#F4A08A;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 6px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+  font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+.wrap{max-width:680px;margin:0 auto;padding:0 12px 72px}
+
+header.top{position:sticky;top:0;z-index:20;background:var(--ground);
+  padding:14px 0 11px;border-bottom:2px solid var(--line)}
+.title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.title h1{margin:0;font-size:18px;font-weight:900;letter-spacing:.01em}
+.title .who{font-size:12.5px;color:var(--muted)}
+.whoedit{font:inherit;font-size:12px;color:var(--accent-ink);background:none;
+  border:0;border-bottom:1px solid var(--line);padding:0 1px;cursor:pointer}
+#gate{position:fixed;inset:0;z-index:99;background:var(--ground);
+  display:none;align-items:center;justify-content:center;padding:24px}
+#gate.on{display:flex}
+.gatebox{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;box-shadow:var(--shadow);padding:24px}
+.gatebox h2{font-size:20px;font-weight:900;margin:0 0 6px}
+.gatebox p{font-size:13.5px;color:var(--muted);margin:0 0 16px;line-height:1.7}
+#whoin{width:100%;padding:14px;font:inherit;font-size:17px;border:2px solid var(--line);
+  border-radius:10px;background:var(--raise);color:var(--ink)}
+#whoin:focus{outline:none;border-color:var(--accent)}
+.gatego{width:100%;margin-top:12px;padding:14px;font:inherit;font-size:16px;font-weight:700;
+  border:0;border-radius:10px;background:var(--accent);color:#fff}
+.gateerr{font-size:13px;color:var(--dead);margin-top:8px;min-height:1.2em}
+.views{display:flex;gap:8px;margin-top:11px}
+.view{flex:1;padding:10px 0;text-align:center;font:inherit;font-size:14px;font-weight:700;
+  border:2px solid var(--line);background:var(--surface);color:var(--muted);
+  border-radius:9px;cursor:pointer}
+.view[aria-pressed="true"]{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.stats{display:flex;margin-top:10px;border:2px solid var(--line);
+  border-radius:10px;overflow:hidden;background:var(--surface)}
+.stat{flex:1;text-align:center;padding:8px 4px;border-right:1px solid var(--line-soft)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:"Roboto Mono",monospace;font-size:20px;
+  font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;color:var(--muted);letter-spacing:.05em}
+.stat.a b{color:var(--ok)} .stat.n b{color:var(--ng)}
+.bar{height:5px;background:var(--line-soft);border-radius:3px;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.tabs{display:flex;gap:6px;margin-top:10px}
+.tab{flex:1;padding:8px 0;text-align:center;font:inherit;font-size:13px;font-weight:500;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  border-radius:8px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--raise);color:var(--ink);
+  border-color:var(--accent);font-weight:700}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:15px;margin-top:11px;box-shadow:var(--shadow)}
+.ch{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;align-items:baseline}
+.num{grid-row:1/3;font-family:"Roboto Mono",monospace;font-size:12px;color:var(--faint);
+  font-variant-numeric:tabular-nums;padding-top:4px}
+.ch h2{margin:0;font-size:17px;font-weight:700;line-height:1.4;text-wrap:balance}
+.meta{margin:0;font-size:13px;color:var(--muted)}
+.tel{display:block;margin:12px 0 0;padding:15px;text-align:center;
+  background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent);
+  border-radius:10px;font-family:"Roboto Mono",monospace;font-size:22px;font-weight:700;
+  letter-spacing:.04em;text-decoration:none;font-variant-numeric:tabular-nums}
+.dead{margin-top:11px;padding:10px 12px;background:var(--dead-soft);
+  border:1px solid var(--dead-line);border-left:4px solid var(--dead);border-radius:0 9px 9px 0}
+.dl{display:block;font-size:13.5px;font-weight:700;color:var(--dead)}
+.du{display:block;font-family:"Roboto Mono",monospace;font-size:12px;
+  color:var(--ink);word-break:break-all;margin-top:3px}
+.open{display:inline-block;margin-top:9px;font-size:13px;color:var(--accent-ink);
+  text-decoration:none;font-weight:500}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}
+.res{padding:12px 2px;font:inherit;font-size:13.5px;font-weight:700;
+  border:1px solid var(--line);background:var(--raise);color:var(--ink);
+  border-radius:9px;cursor:pointer}
+.res:hover{border-color:var(--accent);color:var(--accent-ink)}
+.res[data-v="アポ"]{color:var(--ok);border-color:var(--ok);background:var(--ok-soft)}
+.res[data-v="NG"]{color:var(--ng);border-color:var(--dead-line)}
+.res:focus-visible,.tab:focus-visible,.view:focus-visible,.undo:focus-visible,
+.memo:focus-visible,.tel:focus-visible,.open:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.done{display:none;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;
+  background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;font-size:14px}
+.done .rt{color:var(--accent-ink);font-weight:700}
+.done .rd{color:var(--muted);font-size:12px;font-family:"Roboto Mono",monospace}
+.undo{margin-left:auto;padding:6px 13px;font:inherit;font-size:13px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  border-radius:7px;cursor:pointer}
+.memo{display:none;width:100%;margin-top:8px;padding:11px;font:inherit;font-size:14px;
+  border:1px solid var(--line);border-radius:9px;background:var(--raise);color:var(--ink)}
+.card[data-result]:not([data-result=""]) .acts{display:none}
+.card[data-result]:not([data-result=""]) .done{display:flex}
+.card[data-result]:not([data-result=""]) .memo{display:block}
+.card[data-result="NG"]{opacity:.6}
+.card[data-result="NG"] .done{background:var(--dead-soft);border-color:var(--dead-line)}
+.card[data-result="NG"] .rt{color:var(--ng)}
+.card[data-result="アポ"]{border:2px solid var(--ok)}
+.card[data-result="アポ"] .done{background:var(--ok-soft);border-color:var(--ok)}
+.card[data-result="アポ"] .rt{color:var(--ok)}
+
+.who2{margin:2px 0 8px;font-size:15px;font-weight:700;color:var(--accent-ink);
+  background:var(--accent-soft);display:inline-block;padding:5px 12px;border-radius:8px}
+.why{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+.rep{margin-top:10px}
+#q{color:var(--warn,#f0a);font-weight:700}
+
+.repbtn{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);font:inherit;font-weight:700;font-size:15px}
+.repbtn:active{opacity:.7}
+/* 画面切替と絞り込みは閲覧者ごと（data-local-*） */
+#app[data-local-view="list"] #rules{display:none}
+#app[data-local-view="rules"] #list,
+#app[data-local-view="rules"] .stats,
+#app[data-local-view="rules"] .bar,
+#app[data-local-view="rules"] .tabs{display:none}
+#list[data-local-filter="todo"] .card[data-result="決裁者と話した"],
+#list[data-local-filter="todo"] .card[data-result="アポ"],
+#list[data-local-filter="todo"] .card[data-result="NG"]{display:none}
+#list[data-local-filter="done"] .card[data-result=""]{display:none}
+
+.blk{background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:16px;margin-top:11px;box-shadow:var(--shadow)}
+.blk h3{margin:0 0 10px;font-size:16px;font-weight:900;line-height:1.45}
+.blk.warn{border-left:5px solid var(--dead)}
+.blk.warn h3{color:var(--dead)}
+.blk.accent{border-left:5px solid var(--accent)}
+.blk.accent h3{color:var(--accent-ink)}
+.blk p{margin:0 0 8px;font-size:14.5px}
+.note{color:var(--muted);font-size:13px!important;line-height:1.65}
+q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
+  border-radius:9px;font-size:14.5px;quotes:"「" "」";white-space:pre-line}
+.say{width:100%;border-collapse:collapse;margin-bottom:9px}
+.say td{padding:5px 0;font-size:14.5px;vertical-align:top}
+.say td.x{color:var(--dead);font-weight:900;width:1.8em}
+.say td.o{color:var(--ok);font-weight:900;width:1.8em}
+.flow{margin:0;padding-left:1.3em}
+.flow li{margin-bottom:13px;font-size:14.5px}
+.flow li b{font-size:15px}
+.key{display:inline-block;margin-left:7px;padding:2px 8px;background:var(--dead-soft);
+  color:var(--dead);border-radius:5px;font-size:11.5px;font-weight:700;vertical-align:middle}
+.price{width:100%;border-collapse:collapse}
+.price th{text-align:left;padding:8px 12px 8px 0;font-size:14px;white-space:nowrap;
+  vertical-align:top;color:var(--muted);border-bottom:1px solid var(--line-soft)}
+.price td{padding:8px 0;font-size:14.5px;border-bottom:1px solid var(--line-soft)}
+.qa{margin:0}
+.qa dt{font-weight:700;font-size:14.5px;margin-top:11px;color:var(--ink)}
+.qa dt:before{content:"「";color:var(--faint)}
+.qa dt:after{content:"」";color:var(--faint)}
+.qa dd{margin:3px 0 0;font-size:14px;color:var(--muted)}
+.qa dd b{color:var(--ink)}
+.dont{margin:0;padding-left:1.2em}
+.dont li{font-size:14.5px;margin-bottom:5px}
+.foot{margin-top:22px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.8}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div id="gate"><div class="gatebox">
+  <h2>お名前を入れてください</h2>
+  <p>誰の架電かを記録するために使います。<br>
+     この端末に保存されるので、次からは聞かれません。</p>
+  <input id="whoin" type="text" placeholder="例：山田" autocomplete="name">
+  <button class="gatego" onclick="saveWho()">はじめる</button>
+  <p class="gateerr" id="whoerr"></p>
+</div></div>
+<div class="wrap"><div id="app" data-local-view="list">
+<header class="top">
+  <div class="title"><h1>1次産業　四国　148件</h1>
+    <span class="who"><b id="whoname">—</b>｜1次産業・TikTok運用コンサル　<button class="whoedit" onclick="askWho(1)">名前を変える</button></span></div>
+  <artifact-local>
+  <div class="views">
+    <button class="view" data-v="list" aria-pressed="true" onclick="vw(this)">リスト</button>
+    <button class="view" data-v="rules" aria-pressed="false" onclick="vw(this)">ルールと台本</button>
+  </div>
+  </artifact-local>
+  <div class="stats">
+    <div class="stat"><b id="s-left">148</b><span>残り</span></div>
+    <div class="stat"><b id="s-done">0</b><span>架電済</span></div>
+    <div class="stat a"><b id="s-apo">0</b><span>アポ</span></div>
+    <div class="stat n"><b id="s-ng">0</b><span>NG</span></div>
+  </div>
+  <div class="bar"><i id="s-bar"></i></div>
+  <artifact-local>
+  <div class="tabs">
+    <button class="tab" data-f="todo" aria-pressed="true" onclick="flt(this)">未架電</button>
+    <button class="tab" data-f="done" aria-pressed="false" onclick="flt(this)">架電済</button>
+    <button class="tab" data-f="all" aria-pressed="false" onclick="flt(this)">全件</button>
+  </div>
+  </artifact-local>
+  <div class="rep"><button class="repbtn" onclick="report(this)">結果をコピー（宮崎さんに送る用）</button></div>
+  <div class="tabs" style="margin-top:6px">
+    <select id="f-ken" onchange="narrow()"><option value="">都道府県（すべて）</option><option>徳島</option><option>愛媛</option><option>香川</option><option>高知</option></select>
+    <select id="f-pri" onchange="narrow()"><option value="">優先度（すべて）</option><option>S+</option><option>S</option><option>A</option><option>B</option><option>C</option></select>
+  </div>
+</header>
+
+<div id="rules">
+<section class="blk accent">
+<h3>このリストについて</h3>
+<p><b>1次産業　148件。</b>ハローワークの求人・公開情報・各社サイトから機械で集めて、
+4つの軸（誰が出るか／どれだけ困っているか／サイトの状態／SNSの状況）で優先度を付けています。</p>
+<p>このうち<b>33件は社長・代表・専務クラスか携帯直通</b>、
+<b>85件は相手の名前が分かっています</b>。
+名前が出ているものは、受付で「◯◯さんいらっしゃいますか」と名指しできます。
+これだけで突破率がまるで変わります。知り合いだと思われるからです。</p>
+<p class="note">用件を先に言わないこと。「◯◯さんお願いします」だけで、いったん止める。</p>
+</section>
+
+<section class="blk warn">
+<h3>カードの赤い枠の見方</h3>
+<p>1行目が<b>SNSの状況</b>です。このリストの146件は<b>TikTokをやっていません</b>。
+「Instagramはあるが TikTok なし」なら、発信自体はできる会社ということです。
+「SNS一切なし」は、ゼロから作る提案になります。</p>
+<p>3行目が<b>架電の切り口</b>。募集人数や創業年など、その会社固有の事実が入っています。
+ここを最初の20秒で使ってください。</p>
+</section>
+
+<section class="blk">
+<h3>電話の型（40秒）</h3>
+<p><b>① 受付</b><br>「お世話になります。◯◯さんいらっしゃいますか」<br>
+<span class="note">会社名は聞かれたら答える。先に名乗ると営業だと分かって止められます。</span></p>
+<p><b>② 本人が出たら</b><br>
+「突然すみません、フリードマーケティングの◯◯と申します。
+◯◯（切り口の事実）と拝見しまして、お電話しました」</p>
+<p><b>③ 本題</b><br>
+「今、採用も集客もTikTokから入ってくる流れが強くて、
+同業さんで再生数が伸びている事例が出てきています。
+御社まだやられていないと思うので、その話をと思いまして」</p>
+<p><b>④ アポ打診</b><br>
+「20分だけオンラインで、同業でどんな動画が伸びているかと、
+御社だと何が撮れそうかをお見せするお時間いただけませんか」</p>
+</section>
+
+<section class="blk">
+<h3>1次産業で効く切り口</h3>
+<p>募集人数が多い先ほど切実です。<b>「◯名募集されてますよね」</b>と数字から入ります。
+求人媒体にお金を払っても人が来ない、という状態が続いているところが多い業種です。</p>
+<p>作物・畜種・漁法そのものが動画の素材になります。
+<b>「作っているものをそのまま撮るだけで見られます」</b>が一番通じる言い方です。</p>
+<p class="note">代表の携帯が直通になっている先が多いので、
+名指しできるならまず名前で呼んでもらうこと。</p>
+</section>
+
+<section class="blk">
+<h3>結果ボタンの使い分け</h3>
+<p><b>決裁者と話した</b> … 本人に繋がったが、その場では決まらなかった場合。ここが多いなら台本の後半を直します。<br>
+<b>アポ</b> … 日時が決まった。<br>
+<b>動画提供OK</b> … アポではないが、素材をもらえることになった。ここから入る先も多いです。<br>
+<b>NG</b> … 明確に断られた。再勧誘はしないので、必ず押してください。</p>
+</section>
+</div>
+
+<div id="list" data-local-filter="todo">
+<article class="card" data-result="" data-i="1" data-ken="愛媛" data-pri="S+">
+<header class="ch"><span class="num">1</span>
+<h2>近藤産業（株）</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 S+</p></header>
+<p class="who2">近藤　社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0898723310">0898-72-3310</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">愛媛県西条市小松町明穂甲５７４</span>
+<span class="why">ハローワークで6名募集中／【愛媛県内所有林皆伐】：伐木作業員（林業経験者募／ガ</span></div>
+<a class="open" href="http://www.kondo-kougei.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kondokougei" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="2" data-ken="愛媛" data-pri="S+">
+<header class="ch"><span class="num">2</span>
+<h2>ベルグア－ス株式会社</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S+</p></header>
+<p class="who2">山口一彦ラジオ　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0895208231">0895-20-8231</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">愛媛県宇和島市津島町北灘甲８８番地１</span>
+<span class="why">ハローワークで5名募集中／人事・採用スタッフ／法人営業（野菜苗・農業資材）</span></div>
+<a class="open" href="http://www.bergearth.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/fungarden_official" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="3" data-ken="愛媛" data-pri="S+">
+<header class="ch"><span class="num">3</span>
+<h2>愛媛たいき農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S+</p></header>
+<p class="who2">印又は組合印を押　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0893594181">0893-59-4181</a>
+<div class="dead"><span class="dl">Facebook はあるが TikTok なし</span>
+<span class="du">愛媛県大洲市東大洲１５８２番地</span>
+<span class="why">ハローワークで10名募集中／ガソリンスタンドサービス員／ジェラートコーナー販売員</span></div>
+<a class="open" href="http://www.ja-ehimetaiki.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="4" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">4</span>
+<h2>公益財団法人 愛媛の森林基金</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 S</p></header>
+<p class="who2">岡部直　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0899122595">089-912-2595</a>
+<div class="dead"><span class="dl">Instagram／X はあるが TikTok なし</span>
+<span class="du">愛媛県松山市一番町４丁目４－２</span>
+<span class="why">ハローワークで1名募集中／林業技術者（久万高原町）</span></div>
+<a class="open" href="https://www.emk.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/mori_kikin" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="5" data-ken="香川" data-pri="S">
+<header class="ch"><span class="num">5</span>
+<h2>香川県農業協同組合</h2>
+<p class="meta">1次産業(農業)　香川　優先度 S</p></header>
+<p class="who2">森西　営農管理課 課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0878473901">087-847-3901</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">香川県高松市寿町一丁目３番６号</span>
+<span class="why">ハローワークで22名募集中／一般事務（ＪＡ香川県 東讃営農センター営農管理課／事</span></div>
+<a class="open" href="https://www.kw-ja.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/ja_kagawaken" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCr4kWJJhJrhUT-ou-QDs3sQ" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="6" data-ken="高知" data-pri="S">
+<header class="ch"><span class="num">6</span>
+<h2>（株）エースワン</h2>
+<p class="meta">1次産業(畜産・酪農)　高知　優先度 S</p></header>
+<p class="who2">田島　店長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0895241228">0895-24-1228</a>
+<div class="dead"><span class="dl">Instagram／YouTube はあるが TikTok なし</span>
+<span class="du">高知県高知市薊野南町２８－１２</span>
+<span class="why">ハローワークで9名募集中／食肉加工（エースワン南予畜産プロセスセンター）契／食</span></div>
+<a class="open" href="http://www.ace1.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/aceone.amax" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCfmOnLbjLCHbvKrz2cVzysg" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="7" data-ken="徳島" data-pri="S">
+<header class="ch"><span class="num">7</span>
+<h2>有限会社 樫山農園</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 S</p></header>
+<p class="who2">樫山直樹　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0885372011">0885-37-2011</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">徳島県小松島市坂野町字細野１０番地</span>
+<span class="why">ハローワークで4名募集中／◆未経験者歓迎◆農作業スタッフ｜トマト部門か稲畑／農</span></div>
+<a class="open" href="https://kashiyama-farms.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kashiyama_farms" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="8" data-ken="徳島" data-pri="S">
+<header class="ch"><span class="num">8</span>
+<h2>株式会社 キノコファーム</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 S</p></header>
+<p class="who2">由良　代表取締役社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:08034399475">080-3439-9475</a>
+<div class="dead"><span class="dl">Instagram／YouTube／X／Facebook はあるが TikTok なし</span>
+<span class="du">徳島県徳島市上八万町西地８７２</span>
+<span class="why">ハローワークで1名募集中／菌床椎茸の製造・栽培・管理／有給消化率１００％</span></div>
+<a class="open" href="http://kinoko-farm.sakura.ne.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kinoko_farm_tokushima" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/@kinokofarm" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="9" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">9</span>
+<h2>えひめ中央 農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S</p></header>
+<p class="who2">人事教育課 を呼んでもらう</p>
+<a class="tel" href="tel:0899432121">089-943-2121</a>
+<div class="dead"><span class="dl">Instagram／YouTube はあるが TikTok なし</span>
+<span class="du">愛媛県松山市千舟町８丁目１２８番地１</span>
+<span class="why">ハローワークで10名募集中／かんきつ選果機操作等／中島選果場／かんきつ選果荷造り</span></div>
+<a class="open" href="http://www.ja-e-chuo.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/maruhina_gram" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCu1gDipZRk6PQfkcvxM7QvA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="10" data-ken="徳島" data-pri="S">
+<header class="ch"><span class="num">10</span>
+<h2>木頭森林組合</h2>
+<p class="meta">1次産業(林業・木材)　徳島　優先度 S</p></header>
+<p class="who2">理事組合長　専務理事 さん を呼んでもらう</p>
+<a class="tel" href="tel:0884660016">0884-66-0016</a>
+<div class="dead"><span class="dl">Facebook はあるが TikTok なし</span>
+<span class="du">徳島県那賀郡那賀町大戸字春森３６</span>
+<span class="why">ハローワークで3名募集中／グリーンエース（森林作業員）／わかりやすい画像あ</span></div>
+<a class="open" href="http://www.kito-forest.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="11" data-ken="高知" data-pri="S">
+<header class="ch"><span class="num">11</span>
+<h2>大豊林業（株）</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 S</p></header>
+<p class="who2">小川　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887790290">0887-79-0290</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">高知県長岡郡大豊町杉１０７９－１</span>
+<span class="why">ハローワークで2名募集中／林業用重機整備及びメンテナンス／造林技術者</span></div>
+<a class="open" href="https://ootoyoringyou.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/o_toyoringyou" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="12" data-ken="香川" data-pri="S">
+<header class="ch"><span class="num">12</span>
+<h2>西日本信用漁業協同組合連合会</h2>
+<p class="meta">1次産業(漁業・水産)　香川　優先度 S</p></header>
+<p class="who2">嶋野勝路　総務企画部 人事課 課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0878515311">087-851-5311</a>
+<div class="dead"><span class="dl">X はあるが TikTok なし</span>
+<span class="du">香川県高松市北浜町９番１２号</span>
+<span class="why">ハローワークで8名募集中／◆土日祝休・未経験可◆ 金融機関業務全般／【年休１２</span></div>
+<a class="open" href="http://www.jfmb-west.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="13" data-ken="高知" data-pri="S">
+<header class="ch"><span class="num">13</span>
+<h2>ラッキー農園 株式会社</h2>
+<p class="meta">1次産業(農業)　高知　優先度 S</p></header>
+<p class="who2">代表 を呼んでもらう</p>
+<a class="tel" href="tel:0887790236">0887-79-0236</a>
+<div class="dead"><span class="dl">TikTokは既にあり（Instagram／YouTube／Facebook）</span>
+<span class="du">高知県長岡郡大豊町西川７３５</span>
+<span class="why">ハローワークで1名募集中／農業</span></div>
+<a class="open" href="https://www.lucky-noen.com" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://instagram.com/shopify" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://tiktok.com/@shopify" target="_blank" rel="noopener">TikTokを開く →</a>
+<a class="open" href="https://youtube.com/user/shopify" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="14" data-ken="徳島" data-pri="S">
+<header class="ch"><span class="num">14</span>
+<h2>徳島県農業協同組合</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 S</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0883538050">0883-53-8050</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">徳島県徳島市北佐古一番町５番１２号</span>
+<span class="why">ハローワークで5名募集中／共済窓口業務／葬祭スタッフ（美馬市脇町）</span></div>
+<a class="open" href="https://ja-tokushimaken.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/ja_tokushimaken" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="15" data-ken="徳島" data-pri="S">
+<header class="ch"><span class="num">15</span>
+<h2>アイ・エス・フーズ徳島 株式会社</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 S</p></header>
+<p class="who2">錦織　人事部 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886797950">088-679-7950</a>
+<div class="dead"><span class="dl">Instagram／X はあるが TikTok なし</span>
+<span class="du">徳島県阿波市土成町成当字大場１３２０－１</span>
+<span class="why">ハローワークで4名募集中／生産部長候補／年間休日１０６日／農業未経験でもＯ／農</span></div>
+<a class="open" href="https://isnext.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/i.s.next" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="16" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">16</span>
+<h2>周桑農業協同組合（ＪＡ周桑）</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S</p></header>
+<p class="who2">人事課長 を呼んでもらう</p>
+<a class="tel" href="tel:0898687800">0898-68-7800</a>
+<div class="dead"><span class="dl">Instagram／YouTube／X はあるが TikTok なし</span>
+<span class="du">愛媛県西条市丹原町池田１７０１番地１</span>
+<span class="why">ハローワークで1名募集中／技術職</span></div>
+<a class="open" href="http://www.ja-syuso.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/jasyuso_official" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCPROg4aemtiJLGAQ2jHluqg" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="17" data-ken="高知" data-pri="S">
+<header class="ch"><span class="num">17</span>
+<h2>馬路村森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 S</p></header>
+<p class="who2">業務課 を呼んでもらう</p>
+<a class="tel" href="tel:0887442201">0887-44-2201</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">高知県安芸郡馬路村大字馬路３７４４</span>
+<span class="why">ハローワークで2名募集中／林業作業員【正社員】</span></div>
+<a class="open" href="https://umaji-shinrin.com" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/forest_umaji" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="18" data-ken="徳島" data-pri="S">
+<header class="ch"><span class="num">18</span>
+<h2>サンコウファーム株式会社</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 S</p></header>
+<p class="who2">新和子　専務取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:09071434783">090-7143-4783</a>
+<div class="dead"><span class="dl">Facebook はあるが TikTok なし</span>
+<span class="du">徳島県鳴門市大麻町川崎４４８－１</span>
+<span class="why">ハローワークで1名募集中／椎茸栽培全般</span></div>
+<a class="open" href="http://sankoufarm.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="19" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">19</span>
+<h2>東宇和農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S</p></header>
+<p class="who2">総務部 人事課 を呼んでもらう</p>
+<a class="tel" href="tel:0894621211">0894-62-1211</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">愛媛県西予市宇和町卯之町２丁目４６２</span>
+<span class="why">ハローワークで8名募集中／窓口事務係（れんげ支店・金融課）／総合職【令和９年度</span></div>
+<a class="open" href="http://ja-higashiuwa.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/jaeinoucenter" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="20" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">20</span>
+<h2>うま農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S</p></header>
+<p class="who2">合田久　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0896248713">0896-24-8713</a>
+<div class="dead"><span class="dl">Facebook はあるが TikTok なし</span>
+<span class="du">愛媛県四国中央市中之庄町１６８４－４</span>
+<span class="why">ハローワークで7名募集中／介護職員／あったか荘土居／介護職員／あったか荘川之江</span></div>
+<a class="open" href="http://www.ja-uma.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="21" data-ken="高知" data-pri="S">
+<header class="ch"><span class="num">21</span>
+<h2>高知県農業協同組合 香美地区 土佐山田集出荷場</h2>
+<p class="meta">1次産業(農業)　高知　優先度 S</p></header>
+<p class="who2">大河原　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887534124">0887-53-4124</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">高知県香美市土佐山田町百石町２丁目２－４８</span>
+<span class="why">ハローワークで2名募集中／ニラ、ネギ等袋詰め作業員</span></div>
+<a class="open" href="https://ja-kochi.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kouguri_official" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="22" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">22</span>
+<h2>えひめ南農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S</p></header>
+<p class="who2">赤松　総務企画部 人事課 課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0895228113">0895-22-8113</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">愛媛県宇和島市栄町港３丁目３０３番地</span>
+<span class="why">ハローワークで1名募集中／ガソリンスタンド業務（鬼北中央給油所）</span></div>
+<a class="open" href="http://www.ja-eminami.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/ja_ehimeminami_official" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="23" data-ken="愛媛" data-pri="S">
+<header class="ch"><span class="num">23</span>
+<h2>越智今治農業協同組合 （ＪＡおちいまばり）</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 S</p></header>
+<p class="who2">岡本　店長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0897821200">0897-82-1200</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">愛媛県今治市北宝来町１丁目１番地５</span>
+<span class="why">ハローワークで1名募集中／販売スタッフ（大三島）</span></div>
+<a class="open" href="https://ja-ochiima.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/shimanami.ichigoen" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="24" data-ken="高知" data-pri="S">
+<header class="ch"><span class="num">24</span>
+<h2>高知県農業協同組合 土長地区</h2>
+<p class="meta">1次産業(農業)　高知　優先度 S</p></header>
+<p class="who2">蒲原　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888632412">088-863-2412</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">高知県南国市大そね乙８９４－１</span>
+<span class="why">ハローワークで1名募集中／直販所店舗業務</span></div>
+<a class="open" href="http://ja-kochi.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kouguri_official" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="25" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">25</span>
+<h2>南予森林組合</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 A</p></header>
+<p class="who2">渡邊　専務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0895450814">0895-45-0814</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県北宇和郡鬼北町奈良４０７３番地７</span>
+<span class="why">ハローワークで1名募集中／森林整備士／＊未経験者歓迎！＊資格取得支援あり＊</span></div>
+<a class="open" href="https://www.nanyo-shinrin.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="26" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">26</span>
+<h2>株式会社 太陽ファーム</h2>
+<p class="meta">1次産業(畜産・酪農)　愛媛　優先度 A</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0894333331">0894-33-3331</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西予市三瓶町朝立７－１２２－１</span>
+<span class="why">ハローワークで12名募集中／養豚作業員（中山農場）／養豚作業員（伊方農場）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="27" data-ken="香川" data-pri="A">
+<header class="ch"><span class="num">27</span>
+<h2>サヌキ畜産フーズ 株式会社</h2>
+<p class="meta">1次産業(畜産・酪農)　香川　優先度 A</p></header>
+<p class="who2">増田浩　総務部 部長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0875836262">0875-83-6262</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県三豊市詫間町詫間２１１２番地１４０</span>
+<span class="why">ハローワークで5名募集中／購買・生産管理業務（在庫管理や原料資材の手配など／食</span></div>
+<a class="open" href="http://www.meatpia-sanuki.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="28" data-ken="香川" data-pri="A">
+<header class="ch"><span class="num">28</span>
+<h2>農家－Ｓａｎｕｋｉｆｕｊｉ</h2>
+<p class="meta">1次産業(農業)　香川　優先度 A</p></header>
+<p class="who2">横井健一　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:09076269153">090-7626-9153</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県丸亀市飯野町東二甲８７９番１</span>
+<span class="why">ハローワークで2名募集中／農業作業（アスパラガス）収穫作業【平日・土・日・</span></div>
+<a class="open" href="https://noka-sanukifuji.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="29" data-ken="香川" data-pri="A">
+<header class="ch"><span class="num">29</span>
+<h2>三和機械 株式会社</h2>
+<p class="meta">1次産業(農業)　香川　優先度 A</p></header>
+<p class="who2">大倉　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0875254655">0875-25-4655</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県観音寺市坂本町５丁目４番７号</span>
+<span class="why">ハローワークで2名募集中／農業機械の販売・メンテナンス／農業用薬品のコンサルテ</span></div>
+<a class="open" href="https://sanwa-kikai.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="30" data-ken="徳島" data-pri="A">
+<header class="ch"><span class="num">30</span>
+<h2>株式会社白桃農園</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 A</p></header>
+<p class="who2">白桃薫　代表取締役 ※連絡先補足あり さん を呼んでもらう</p>
+<a class="tel" href="tel:0886760283">088-676-0283</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県名西郡神山町神領字本上角１７３</span>
+<span class="why">ハローワークで1名募集中／植木などの草木の生産スタッフ</span></div>
+<a class="open" href="https://sites.google.com/shiramomo.co.jp/shiramomofarm/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="31" data-ken="香川" data-pri="A">
+<header class="ch"><span class="num">31</span>
+<h2>日笠工業株式会社</h2>
+<p class="meta">1次産業(農業)　香川　優先度 A</p></header>
+<p class="who2">日笠　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0879490133">0879-49-0133</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県さぬき市造田宮西８５４－４</span>
+<span class="why">ハローワークで1名募集中／農場管理者候補</span></div>
+<a class="open" href="https://www.hikasakougyou.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="32" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">32</span>
+<h2>株式会社 あう農園</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 A</p></header>
+<p class="who2">有田豊史　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0895491545">0895-49-1545</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県北宇和郡鬼北町大字東仲４１番地</span>
+<span class="why">ハローワークで1名募集中／鬼北町での自社生産米を使った食品製造補助スタッフ</span></div>
+<a class="open" href="https://au-farm.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="33" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">33</span>
+<h2>株式会社 大愛</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 A</p></header>
+<p class="who2">宮部真司　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0897439000">0897-43-9000</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県新居浜市船木１７２７－２</span>
+<span class="why">ハローワークで1名募集中／椎茸栽培作業員</span></div>
+<a class="open" href="http://www.taiai.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="34" data-ken="香川" data-pri="A">
+<header class="ch"><span class="num">34</span>
+<h2>香川県厚生農業協同組合連合会 滝宮総合病院</h2>
+<p class="meta">1次産業(農業)　香川　優先度 A</p></header>
+<p class="who2">綾野　事務部庶務課 課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0878761145">087-876-1145</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県綾歌郡綾川町滝宮４８６</span>
+<span class="why">ハローワークで15名募集中／介護福祉士／医療事務員</span></div>
+<a class="open" href="http://www.takinomiya-hp.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="35" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">35</span>
+<h2>株式会社 山口園芸</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 A</p></header>
+<p class="who2">岡沢　担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0895322116">0895-32-2116</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">愛媛県宇和島市津島町山財４９２５</span>
+<span class="why">ハローワークで8名募集中／ポットへの土入れなど（ライン作業）／（期間雇用）／園</span></div>
+<a class="open" href="http://www.e-nae.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/yamaguchiengei" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="36" data-ken="高知" data-pri="A">
+<header class="ch"><span class="num">36</span>
+<h2>香美森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 A</p></header>
+<p class="who2">三谷　代表理事専務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887592004">0887-59-2004</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県香美市香北町美良布１１００番地</span>
+<span class="why">ハローワークで1名募集中／事務（総務、経理）【土日祝休み】</span></div>
+<a class="open" href="https://www.kami-shinrin.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="37" data-ken="高知" data-pri="A">
+<header class="ch"><span class="num">37</span>
+<h2>（株）あすなろ四国支社</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 A</p></header>
+<p class="who2">支社長原田康弘　総務部長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888438012">088-843-8012</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高知市塚ノ原４３３番地２</span>
+<span class="why">ハローワークで8名募集中／林業職（正社員）</span></div>
+<a class="open" href="https://asunaro-sikoku.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="38" data-ken="高知" data-pri="A">
+<header class="ch"><span class="num">38</span>
+<h2>大東冷蔵株式会社</h2>
+<p class="meta">1次産業(漁業・水産)　高知　優先度 A</p></header>
+<p class="who2">宮田・小林　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888558290">088-855-8290</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高知市弘化台１番１５号</span>
+<span class="why">ハローワークで6名募集中／養殖魚飼料のルート販売・鮮魚出荷作業・海上養殖業／４</span></div>
+<a class="open" href="http://daitoreizo.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="39" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">39</span>
+<h2>愛媛県漁業共済組合</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 A</p></header>
+<p class="who2">総務部 課長 を呼んでもらう</p>
+<a class="tel" href="tel:0899339238">089-933-9238</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市二番町４丁目６番地２</span>
+<span class="why">ハローワークで1名募集中／事務</span></div>
+<a class="open" href="http://www.gyosai.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="40" data-ken="徳島" data-pri="A">
+<header class="ch"><span class="num">40</span>
+<h2>徳島県厚生農業協同組合連合会</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 A</p></header>
+<p class="who2">三宅　人事部次長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886342626">088-634-2626</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市北佐古一番町５番１２号</span>
+<span class="why">ハローワークで53名募集中／【令和９年度採用】事務員／【Ｒ９】薬剤師・阿南、吉野</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="41" data-ken="愛媛" data-pri="A">
+<header class="ch"><span class="num">41</span>
+<h2>東予園芸農業（協）</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 A</p></header>
+<p class="who2">河内　販売担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:08086391083">080-8639-1083</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西条市丹原町今井４３１</span>
+<span class="why">ハローワークで46名募集中／あんぽ柿製造作業員／事務職 【急募】</span></div>
+<a class="open" href="http://www.toyoengei.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="42" data-ken="高知" data-pri="A">
+<header class="ch"><span class="num">42</span>
+<h2>高知県厚生農業協同組合連合会</h2>
+<p class="meta">1次産業(農業)　高知　優先度 A</p></header>
+<p class="who2">採用ご担当者 を呼んでもらう</p>
+<a class="tel" href="tel:0888632181">088-863-2181</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県南国市明見字中野５２６－１</span>
+<span class="why">ハローワークで21名募集中／事務員／医療クラーク</span></div>
+<a class="open" href="http://www.kouseiren.ja-kochi.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="43" data-ken="高知" data-pri="A">
+<header class="ch"><span class="num">43</span>
+<h2>（株）ヒューマンアイズ高知統括事業所</h2>
+<p class="meta">1次産業(農業)　高知　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0120227373">0120-22-7373</a>
+<div class="dead"><span class="dl">TikTokは既にあり（Instagram）</span>
+<span class="du">高知県高知市大津乙１１４２番地１</span>
+<span class="why">ハローワークで5名募集中／農業機械部品の溶接（資格不要）</span></div>
+<a class="open" href="http://www.humaneyes.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/humaneyes.official" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.tiktok.com/@humaneyes.official" target="_blank" rel="noopener">TikTokを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="44" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">44</span>
+<h2>株式会社 フォレストバンク</h2>
+<p class="meta">1次産業(林業・木材)　徳島　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0886249963">088-624-9963</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県那賀郡那賀町木頭西宇字北野１０４番地２</span>
+<span class="why">ハローワークで1名募集中／林業（現場作業）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="45" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">45</span>
+<h2>内子町森林組合</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 B</p></header>
+<p class="who2">兵頭　総務課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0893443118">0893-44-3118</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県喜多郡内子町五百木１８６番地２</span>
+<span class="why">ハローワークで5名募集中／森林整備作業員（未経験者歓迎！）／現場管理（昨年度年</span></div>
+<a class="open" href="http://www.uchikosinrin.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="46" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">46</span>
+<h2>ＫＬＣ 株式会社</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0893239115">0893-23-9115</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県大洲市菅田町菅田甲１９５４番地４１</span>
+<span class="why">ハローワークで2名募集中／林業作業員【大洲市林業就業者支援給付金対象求人】</span></div>
+<a class="open" href="https://klc-forest.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="47" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">47</span>
+<h2>幡東森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0880552021">0880-55-2021</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県幡多郡黒潮町熊井３４６－８</span>
+<span class="why">ハローワークで2名募集中／現場技術者【資格取得支援制度あり】</span></div>
+<a class="open" href="https://www.bandou-forest.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="48" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">48</span>
+<h2>丸和林業（株）</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 B</p></header>
+<p class="who2">筒井　管理部 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888826155">088-882-6155</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高知市知寄町３丁目３０３番地</span>
+<span class="why">ハローワークで2名募集中／山林作業員（高知事業所）／山林作業員（高知事業所）【</span></div>
+<a class="open" href="http://www.maruwa-forest.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="49" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">49</span>
+<h2>株式会社 林業ＷＡＤＡ</h2>
+<p class="meta">1次産業(林業・木材)　徳島　優先度 B</p></header>
+<p class="who2">牛尾　営業課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0883877718">0883-87-7718</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県三好市池田町ウヱノ３１３１番地</span>
+<span class="why">ハローワークで1名募集中／林業作業員</span></div>
+<a class="open" href="http://ringyouwada.jimdofree.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="50" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">50</span>
+<h2>大森商機 株式会社</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 B</p></header>
+<p class="who2">八塚　総務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0899730888">089-973-0888</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市空港通３丁目９番６号</span>
+<span class="why">ハローワークで1名募集中／営業（高知県 林業）</span></div>
+<a class="open" href="https://omsyouki.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="51" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">51</span>
+<h2>株式会社 パイオニア通商 宇和島営業所</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 B</p></header>
+<p class="who2">阿部　業務本部 さん を呼んでもらう</p>
+<a class="tel" href="tel:0596252288">0596-25-2288</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県宇和島市高串３－１０－１</span>
+<span class="why">ハローワークで2名募集中／営業職員／顧客先魚類養殖現場での軽作業及び情報収集</span></div>
+<a class="open" href="https://pioneer5652.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="52" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">52</span>
+<h2>河野畜産 有限会社</h2>
+<p class="meta">1次産業(畜産・酪農)　愛媛　優先度 B</p></header>
+<p class="who2">河野　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0894629879">0894-62-9879</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西予市宇和町伊賀上９６２番地</span>
+<span class="why">ハローワークで4名募集中／家畜の飼育員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="53" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">53</span>
+<h2>株式会社内藤畜産</h2>
+<p class="meta">1次産業(畜産・酪農)　徳島　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0886953029">088-695-3029</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県阿波市土成町秋月字伊月４９－１</span>
+<span class="why">ハローワークで3名募集中／飼育・管理・給餌／休日応相談</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="54" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">54</span>
+<h2>有限会社 愛媛畜産</h2>
+<p class="meta">1次産業(畜産・酪農)　愛媛　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0894216812">0894-21-6812</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西予市三瓶町和泉甲６８２－１</span>
+<span class="why">ハローワークで1名募集中／運転手【中型】</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="55" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">55</span>
+<h2>有限会社 協和畜産</h2>
+<p class="meta">1次産業(畜産・酪農)　愛媛　優先度 B</p></header>
+<p class="who2">田中　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0894660419">0894-66-0419</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西予市宇和町信里２０１７ー１</span>
+<span class="why">ハローワークで1名募集中／養豚作業員【週休二日】</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="56" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">56</span>
+<h2>有限会社 大野見塩田牧場</h2>
+<p class="meta">1次産業(畜産・酪農)　高知　優先度 B</p></header>
+<p class="who2">代表 を呼んでもらう</p>
+<a class="tel" href="tel:0889572537">0889-57-2537</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高岡郡中土佐町大野見長野８４</span>
+<span class="why">ハローワークで1名募集中／酪農及び農業作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="57" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">57</span>
+<h2>（株）むらびと本舗</h2>
+<p class="meta">1次産業(畜産・酪農)　高知　優先度 B</p></header>
+<p class="who2">近藤　副社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887842267">0887-84-2267</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県土佐郡大川村朝谷２６番地</span>
+<span class="why">ハローワークで1名募集中／大川黒牛飼養管理業務（畜産作業員）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="58" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">58</span>
+<h2>石井養鶏農業協同組合</h2>
+<p class="meta">1次産業(畜産・酪農)　徳島　優先度 B</p></header>
+<p class="who2">山崎　部長【事業所台帳補足あり】 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886421241">088-642-1241</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市国府町矢野４８５</span>
+<span class="why">ハローワークで8名募集中／にわとり（種鶏）の飼育管理スタッフ／養鶏農場スタッフ</span></div>
+<a class="open" href="http://www.ishii-youkei.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="59" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">59</span>
+<h2>愛媛マルハ 株式会社</h2>
+<p class="meta">1次産業(畜産・酪農)　愛媛　優先度 B</p></header>
+<p class="who2">宇都宮基成　総務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0894220070">0894-22-0070</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県八幡浜市矢野町１丁目１２１８番地１</span>
+<span class="why">ハローワークで2名募集中／養鶏場の雑務作業員（三瓶町）／養鶏場作業員（伊方町）</span></div>
+<a class="open" href="https://www.maruhafoods.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="60" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">60</span>
+<h2>有限会社 若草ファーム</h2>
+<p class="meta">1次産業(畜産・酪農)　徳島　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0883536422">0883-53-6422</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県美馬市脇町字東赤谷名１７４６</span>
+<span class="why">ハローワークで1名募集中／養豚管理</span></div>
+<a class="open" href="https://hokusin-group.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="61" data-ken="香川" data-pri="B">
+<header class="ch"><span class="num">61</span>
+<h2>あかまつ農園（赤松 一）</h2>
+<p class="meta">1次産業(農業)　香川　優先度 B</p></header>
+<p class="who2">代表 を呼んでもらう</p>
+<a class="tel" href="tel:09023182557">090-2318-2557</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県東かがわ市西村１３５０－１</span>
+<span class="why">ハローワークで4名募集中／農作業全般 ／【経験者】を募集します！／農作業全般 </span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="62" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">62</span>
+<h2>西地食品 有限会社</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0884362284">0884-36-2284</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県阿南市新野町谷口１２１番地</span>
+<span class="why">ハローワークで1名募集中／食品加工及び農業／就業時間応相談／休日も応相談</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="63" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">63</span>
+<h2>有限会社 住友フーズ</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0883362482">0883-36-2482</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県阿波市市場町大野島字江ノ島１４３－３</span>
+<span class="why">ハローワークで1名募集中／農作業及び農産物一次加工／経験者優遇／未経験者支</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="64" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">64</span>
+<h2>おの農園（尾野 文男）</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">代表 を呼んでもらう</p>
+<a class="tel" href="tel:0897475123">0897-47-5123</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西条市安知生新開２６番地</span>
+<span class="why">ハローワークで1名募集中／農業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="65" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">65</span>
+<h2>株式会社 神野農園</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0897335695">0897-33-5695</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県新居浜市郷１丁目１－４５</span>
+<span class="why">ハローワークで1名募集中／農作業、受託管理作業、生産、管理（正社員／未経験</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="66" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">66</span>
+<h2>株式会社 藤田青果</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">代表取締役社長 を呼んでもらう</p>
+<a class="tel" href="tel:0896743159">0896-74-3159</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県四国中央市土居町入野９９３－５</span>
+<span class="why">ハローワークで1名募集中／農産物の仕入営業</span></div>
+<a class="open" href="http://fujita-seika.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="67" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">67</span>
+<h2>株式会社 ながおか</h2>
+<p class="meta">1次産業(農業)　高知　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:09082820866">090-8282-0866</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県南国市三畠９５９－２</span>
+<span class="why">ハローワークで1名募集中／大規模水稲・ブロッコリー・サツマイモ複合農業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="68" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">68</span>
+<h2>農事組合法人 たいよう農園</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0894333557">0894-33-3557</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県大洲市野佐来１６２番地２０</span>
+<span class="why">ハローワークで10名募集中／農場作業員／野菜加工作業員（正社員）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="69" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">69</span>
+<h2>株式会社 ＧＬＯＢＡＬ ｐｌｕｓ （ＴＨＥ ＧＬＯＣＡＬ ＨＤ 株式会社）</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 B</p></header>
+<p class="who2">元木　総務部長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0883635665">0883-63-5665</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県美馬市美馬町字露口８４ー７</span>
+<span class="why">ハローワークで8名募集中／きのこ栽培作業員／きのこ栽培技術員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="70" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">70</span>
+<h2>えひめ未来農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">経済課 課長 を呼んでもらう</p>
+<a class="tel" href="tel:0897668817">0897-66-8817</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県新居浜市田所町３－６３</span>
+<span class="why">ハローワークで7名募集中／店頭・配送業務スタッフ／神戸給油所／訪問介護員（ヘル</span></div>
+<a class="open" href="https://ja-ehimemirai.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="71" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">71</span>
+<h2>株式会社あぐり家 農機具ランドあぐり家</h2>
+<p class="meta">1次産業(農業)　高知　優先度 B</p></header>
+<p class="who2">毛利　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0864413962">086-441-3962</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高知市介良甲９９４－１</span>
+<span class="why">ハローワークで3名募集中／業務全般（パート）／農業機械の整備［経験者活躍］（中</span></div>
+<a class="open" href="https://www.agri-ya.jp/recruit/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="72" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">72</span>
+<h2>アビリティーセンター株式会社</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">新居浜オフィス を呼んでもらう</p>
+<a class="tel" href="tel:0897342555">0897-34-2555</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県新居浜市坂井町２－３－１７</span>
+<span class="why">ハローワークで2名募集中／農業用種子の材料投入と検品作業／新居浜市／農業製品メ</span></div>
+<a class="open" href="http://www.abi.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="73" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">73</span>
+<h2>高知県食鶏農業協同組合</h2>
+<p class="meta">1次産業(農業)　高知　優先度 B</p></header>
+<p class="who2">清水　高知工場 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888662898">088-866-2898</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高知市大津乙１７５６－１</span>
+<span class="why">ハローワークで1名募集中／管理職候補</span></div>
+<a class="open" href="https://www.san-eikk.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="74" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">74</span>
+<h2>ナイス原木流通 株式会社</h2>
+<p class="meta">1次産業(林業・木材)　徳島　優先度 B</p></header>
+<p class="who2">細井浩明　取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0885322270">0885-32-2270</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県小松島市金磯町３番６５号</span>
+<span class="why">ハローワークで2名募集中／林業（主に伐採施業）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="75" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">75</span>
+<h2>いしづち森林組合</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 B</p></header>
+<p class="who2">玉置　参事 さん を呼んでもらう</p>
+<a class="tel" href="tel:0897560180">0897-56-0180</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西条市大町</span>
+<span class="why">ハローワークで2名募集中／技能職員（林業現業職員）</span></div>
+<a class="open" href="http://www.ishi-mori.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="76" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">76</span>
+<h2>株式会社 とされいほく</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 B</p></header>
+<p class="who2">石垣　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887721230">0887-72-1230</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県長岡郡大豊町川口２０４２－１６</span>
+<span class="why">ハローワークで2名募集中／林業現場の事務／林業現場技術者</span></div>
+<a class="open" href="http://tosareihoku.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="77" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">77</span>
+<h2>一般社団法人 高知県森林整備公社</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 B</p></header>
+<p class="who2">総務企画課長 を呼んでもらう</p>
+<a class="tel" href="tel:0888624180">088-862-4180</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県南国市双葉台７番地１（高知県森連会館１階）</span>
+<span class="why">ハローワークで1名募集中／林業に係る現場指導及び測量、分収造林契約者との協</span></div>
+<a class="open" href="http://kochissk.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="78" data-ken="高知" data-pri="B">
+<header class="ch"><span class="num">78</span>
+<h2>四万十町森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 B</p></header>
+<p class="who2">企画営業部長 を呼んでもらう</p>
+<a class="tel" href="tel:0880225310">0880-22-5310</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高岡郡四万十町古市町１０番１４号</span>
+<span class="why">ハローワークで1名募集中／林業作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="79" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">79</span>
+<h2>愛媛県漁業協同組合 北灘支所</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 B</p></header>
+<p class="who2">支所長 を呼んでもらう</p>
+<a class="tel" href="tel:0895322850">0895-32-2850</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県宇和島市津島町北灘甲１０３２番地</span>
+<span class="why">ハローワークで2名募集中／組合事業に関わる全般の事務／組合事業に関わる全般の事</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="80" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">80</span>
+<h2>徳島県漁業協同組合連合会</h2>
+<p class="meta">1次産業(漁業・水産)　徳島　優先度 B</p></header>
+<p class="who2">総務部 を呼んでもらう</p>
+<a class="tel" href="tel:0886360500">088-636-0500</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市東沖洲２丁目１３番地</span>
+<span class="why">ハローワークで1名募集中／冷凍事業等における配送及び作業／冷凍部</span></div>
+<a class="open" href="http://www.tokushimagyoren.or.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="81" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">81</span>
+<h2>愛媛県漁業協同組合 三崎支所</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 B</p></header>
+<p class="who2">佐藤　支所長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0894560111">0894-56-0111</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西宇和郡伊方町串４２番地</span>
+<span class="why">ハローワークで1名募集中／販売／水産物の選別</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="82" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">82</span>
+<h2>秀長水産株式会社</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0895253305">0895-25-3305</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県宇和島市築地町２丁目６－２４</span>
+<span class="why">ハローワークで1名募集中／リフト運転手 ＊未経験者歓迎＊６０歳以上応募可＊</span></div>
+<a class="open" href="http://www.hidecho.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="83" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">83</span>
+<h2>愛媛県漁業協同組合 下波支所</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 B</p></header>
+<p class="who2">支所長 を呼んでもらう</p>
+<a class="tel" href="tel:0895290121">0895-29-0121</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県宇和島市下波３０４８番地</span>
+<span class="why">ハローワークで1名募集中／冷蔵・冷凍倉庫作業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="84" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">84</span>
+<h2>株式会社 十文字チキン四国</h2>
+<p class="meta">1次産業(畜産・酪農)　徳島　優先度 B</p></header>
+<p class="who2">支援部 を呼んでもらう</p>
+<a class="tel" href="tel:0883634215">0883-63-4215</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県美馬郡つるぎ町貞光字小山北１６８番地２</span>
+<span class="why">ハローワークで7名募集中／養鶏農場サポートスタッフ／養鶏農場スタッフ</span></div>
+<a class="open" href="https://www.chicken.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="85" data-ken="香川" data-pri="B">
+<header class="ch"><span class="num">85</span>
+<h2>株式会社 小原農園</h2>
+<p class="meta">1次産業(農業)　香川　優先度 B</p></header>
+<p class="who2">取締役 を呼んでもらう</p>
+<a class="tel" href="tel:09062832098">090-6283-2098</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県坂出市大屋冨町１９７３</span>
+<span class="why">ハローワークで2名募集中／農作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="86" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">86</span>
+<h2>有限会社 大地のめぐみ</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">矢野　工場長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0896756001">0896-75-6001</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県四国中央市土居町小林１８５－１</span>
+<span class="why">ハローワークで7名募集中／椎茸のパック詰め作業員／椎茸の収穫及びパック詰め作業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="87" data-ken="徳島" data-pri="B">
+<header class="ch"><span class="num">87</span>
+<h2>徳島市農業協同組合 しいたけパックセンター</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 B</p></header>
+<p class="who2">八田　担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886689322">088-668-9322</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市上八万町樋口７－１</span>
+<span class="why">ハローワークで5名募集中／しいたけ選別工</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="88" data-ken="香川" data-pri="B">
+<header class="ch"><span class="num">88</span>
+<h2>香川県農業協同組合 西讃営農センター</h2>
+<p class="meta">1次産業(農業)　香川　優先度 B</p></header>
+<p class="who2">高橋　ふれあいセンター豊南店 所長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0875544542">0875-54-4542</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県観音寺市植田町１７３５番地</span>
+<span class="why">ハローワークで3名募集中／ふれあいセンター豊南店（農業資材店舗）スタッフ／事務</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="89" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">89</span>
+<h2>宇和島青果販売農業協同組合 連合会</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">総務部長／参与 を呼んでもらう</p>
+<a class="tel" href="tel:0895225611">0895-22-5611</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県宇和島市宮下三百田甲１２７９番地</span>
+<span class="why">ハローワークで3名募集中／青果市場で働きませんか？【販売・集荷】＊未経験者</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="90" data-ken="香川" data-pri="B">
+<header class="ch"><span class="num">90</span>
+<h2>四国生乳販売農業協同組合連合会</h2>
+<p class="meta">1次産業(農業)　香川　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0878228151">087-822-8151</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県高松市寿町１丁目１番１２号</span>
+<span class="why">ハローワークで1名募集中／総合職 （主に生乳の受託販売）</span></div>
+<a class="open" href="http://www.dairy.co.jp/shikoku/index.html" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="91" data-ken="香川" data-pri="B">
+<header class="ch"><span class="num">91</span>
+<h2>香川県立笠田高等学校</h2>
+<p class="meta">1次産業(農業)　香川　優先度 B</p></header>
+<p class="who2">野々村　教頭 さん を呼んでもらう</p>
+<a class="tel" href="tel:0875623345">0875-62-3345</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県三豊市豊中町笠田竹田２５１</span>
+<span class="why">ハローワークで1名募集中／臨時的任用職員（産休代替実習助手 農業）</span></div>
+<a class="open" href="https://www.kagawa-edu.jp/kasadh01/kasada.htm" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="92" data-ken="愛媛" data-pri="B">
+<header class="ch"><span class="num">92</span>
+<h2>村上産業 株式会社</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 B</p></header>
+<p class="who2">総務経理部長 を呼んでもらう</p>
+<a class="tel" href="tel:0899473111">089-947-3111</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市本町１丁目２－１</span>
+<span class="why">ハローワークで1名募集中／主に農業資材の配送</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="93" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">93</span>
+<h2>藤岡林業 株式会社</h2>
+<p class="meta">1次産業(林業・木材)　香川　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0878873061">087-887-3061</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県高松市塩江町安原下第１号字西桶７７９番地１</span>
+<span class="why">ハローワークで4名募集中／トレーラー運転手＊／現場作業員［林業：伐採他］＊</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="94" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">94</span>
+<h2>南宇和森林組合</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 C</p></header>
+<p class="who2">参事 を呼んでもらう</p>
+<a class="tel" href="tel:0895721842">0895-72-1842</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県南宇和郡愛南町城辺甲１５３４番地１</span>
+<span class="why">ハローワークで4名募集中／林業作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="95" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">95</span>
+<h2>香川東部森林組合</h2>
+<p class="meta">1次産業(林業・木材)　香川　優先度 C</p></header>
+<p class="who2">平宅　総務課 さん を呼んでもらう</p>
+<a class="tel" href="tel:0879430588">0879-43-0588</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県さぬき市寒川町石田東甲１７０８－２</span>
+<span class="why">ハローワークで3名募集中／技術員（職員）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="96" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">96</span>
+<h2>植村木材有限会社 中村事務所</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0880348667">0880-34-8667</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県四万十市磯ノ川２４００－２</span>
+<span class="why">ハローワークで3名募集中／山林作業員【資格取得支援制度あり】</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="97" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">97</span>
+<h2>Ｗｏｏｄｓ ｃｏ－ｏｐ 祖谷協同組合</h2>
+<p class="meta">1次産業(林業・木材)　徳島　優先度 C</p></header>
+<p class="who2">上西　総務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0883885321">0883-88-5321</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県三好市東祖谷樫尾２０３</span>
+<span class="why">ハローワークで2名募集中／林業作業員／未経験者歓迎！指導します</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="98" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">98</span>
+<h2>山下林業 株式会社</h2>
+<p class="meta">1次産業(林業・木材)　香川　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:09037886746">090-3788-6746</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県高松市国分寺町新居１９５番地３</span>
+<span class="why">ハローワークで2名募集中／作業員（草刈り・伐採・林業等）＊</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="99" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">99</span>
+<h2>八西森林組合</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 C</p></header>
+<p class="who2">総務課長 を呼んでもらう</p>
+<a class="tel" href="tel:0894220496">0894-22-0496</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県八幡浜市神宮通二丁目７８５－１</span>
+<span class="why">ハローワークで2名募集中／林業作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="100" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">100</span>
+<h2>有限会社 阿部林業開発</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 C</p></header>
+<p class="who2">阿部　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0898553536">0898-55-3536</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県今治市玉川町龍岡上甲８５－１</span>
+<span class="why">ハローワークで2名募集中／林業作業員（新体制でスタート！）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="101" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">101</span>
+<h2>土佐町森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 C</p></header>
+<p class="who2">千頭、高井　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887820140">0887-82-0140</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県土佐郡土佐町土居２６－１</span>
+<span class="why">ハローワークで2名募集中／技術職員</span></div>
+<a class="open" href="http://www.town-tosa-sinrin.or.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="102" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">102</span>
+<h2>須崎地区森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 C</p></header>
+<p class="who2">竹村　総務課 さん を呼んでもらう</p>
+<a class="tel" href="tel:0889430030">0889-43-0030</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県須崎市安和９２５</span>
+<span class="why">ハローワークで2名募集中／林業技術員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="103" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">103</span>
+<h2>高知中央森林組合</h2>
+<p class="meta">1次産業(林業・木材)　高知　優先度 C</p></header>
+<p class="who2">山下　総務課 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888672221">088-867-2221</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県吾川郡いの町下八川丁３８００番地</span>
+<span class="why">ハローワークで2名募集中／現場技能者</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="104" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">104</span>
+<h2>西予市森林組合</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 C</p></header>
+<p class="who2">山口　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0894720063">0894-72-0063</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西予市野村町野村１０－４６６－２</span>
+<span class="why">ハローワークで1名募集中／林業作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="105" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">105</span>
+<h2>曽我部林業合同会社</h2>
+<p class="meta">1次産業(林業・木材)　愛媛　優先度 C</p></header>
+<p class="who2">求人担当者 を呼んでもらう</p>
+<a class="tel" href="tel:0896248215">0896-24-8215</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県四国中央市上柏町２９９番地６</span>
+<span class="why">ハローワークで1名募集中／林業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="106" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">106</span>
+<h2>長原漁業 協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　徳島　優先度 C</p></header>
+<p class="who2">仲田　総務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886992053">088-699-2053</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県板野郡松茂町豊岡字芦田鶴１１３</span>
+<span class="why">ハローワークで3名募集中／事務及びガソリン給油</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="107" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">107</span>
+<h2>直島漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　香川　優先度 C</p></header>
+<p class="who2">大谷　総務課 さん を呼んでもらう</p>
+<a class="tel" href="tel:0878922244">087-892-2244</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県香川郡直島町８３４番地５</span>
+<span class="why">ハローワークで3名募集中／冷蔵庫現場作業員</span></div>
+<a class="open" href="http://www.jf-net.ne.jp/kanaosima" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="108" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">108</span>
+<h2>株式会社 佐田岬の鬼</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 C</p></header>
+<p class="who2">総務部 を呼んでもらう</p>
+<a class="tel" href="tel:0899725502">089-972-5502</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市南吉田町１４９７一１</span>
+<span class="why">ハローワークで3名募集中／水産食料品製造員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="109" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">109</span>
+<h2>高知県漁業協同組合清水統括支所</h2>
+<p class="meta">1次産業(漁業・水産)　高知　優先度 C</p></header>
+<p class="who2">求人担当 を呼んでもらう</p>
+<a class="tel" href="tel:0880821221">0880-82-1221</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県土佐清水市戎町３番１号</span>
+<span class="why">ハローワークで2名募集中／作業員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="110" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">110</span>
+<h2>川内漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　徳島　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0886650402">088-665-0402</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市川内町旭野３１６番地先国有地</span>
+<span class="why">ハローワークで1名募集中／事務 ＊男女歓迎</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="111" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">111</span>
+<h2>宍喰漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　徳島　優先度 C</p></header>
+<p class="who2">参事 を呼んでもらう</p>
+<a class="tel" href="tel:0884762004">0884-76-2004</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県海部郡海陽町宍喰浦字正梶１－２地先</span>
+<span class="why">ハローワークで1名募集中／魚貝類の水揚げ・入札管理等・一般事務・漁協業務全</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="112" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">112</span>
+<h2>北灘漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　徳島　優先度 C</p></header>
+<p class="who2">菊川　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886820011">088-682-0011</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県鳴門市北灘町宿毛谷字相ケ谷１－１</span>
+<span class="why">ハローワークで1名募集中／販売・冷凍・購買等の現場、事務職員</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="113" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">113</span>
+<h2>大平水産 株式会社</h2>
+<p class="meta">1次産業(漁業・水産)　香川　優先度 C</p></header>
+<p class="who2">大平　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0875822837">0875-82-2837</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県三豊市仁尾町仁尾甲１８５番地１</span>
+<span class="why">ハローワークで1名募集中／運搬船船長</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="114" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">114</span>
+<h2>池田漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　香川　優先度 C</p></header>
+<p class="who2">参事 を呼んでもらう</p>
+<a class="tel" href="tel:0879750366">0879-75-0366</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県小豆郡小豆島町池田２２８－３２</span>
+<span class="why">ハローワークで1名募集中／営業・キッチンカーによる販売業務</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="115" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">115</span>
+<h2>大濱漁業 株式会社</h2>
+<p class="meta">1次産業(漁業・水産)　愛媛　優先度 C</p></header>
+<p class="who2">経理・賃貸事業担当 を呼んでもらう</p>
+<a class="tel" href="tel:0895750321">0895-75-0321</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県南宇和郡愛南町中浦７７０番地</span>
+<span class="why">ハローワークで1名募集中／船舶保守・メンテナンスの工場長</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="116" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">116</span>
+<h2>高知県無線漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　高知　優先度 C</p></header>
+<p class="who2">吉岡　採用担当者 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887220855">0887-22-0855</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県室戸市室津字古ル城２３１８番地</span>
+<span class="why">ハローワークで1名募集中／無線通信士【正社員】</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="117" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">117</span>
+<h2>錦浦漁業協同組合</h2>
+<p class="meta">1次産業(漁業・水産)　高知　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0889424020">0889-42-4020</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県須崎市浜町２丁目４－９</span>
+<span class="why">ハローワークで1名募集中／販売</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="118" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">118</span>
+<h2>有限会社 海洋技術</h2>
+<p class="meta">1次産業(漁業・水産)　高知　優先度 C</p></header>
+<p class="who2">有川　担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888561667">088-856-1667</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県土佐市宇佐町宇佐３１５９－１５</span>
+<span class="why">ハローワークで1名募集中／水産技術者（カツオの積み下ろし・運搬作業他）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="119" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">119</span>
+<h2>香川県畜産試験場</h2>
+<p class="meta">1次産業(畜産・酪農)　香川　優先度 C</p></header>
+<p class="who2">宇都宮桂　総務課長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0878981511">087-898-1511</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県木田郡三木町大字下高岡２７０６</span>
+<span class="why">ハローワークで2名募集中／家畜飼養管理及びほ場管理（会計年度任用職員）／試験研</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="120" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">120</span>
+<h2>有限会社 森末牧場</h2>
+<p class="meta">1次産業(畜産・酪農)　香川　優先度 C</p></header>
+<p class="who2">森末　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0877896144">0877-89-6144</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県仲多度郡まんのう町後山道南１３－１</span>
+<span class="why">ハローワークで1名募集中／ショベルローダ、トラクターの牽引・運転業務（パー</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="121" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">121</span>
+<h2>高知県</h2>
+<p class="meta">1次産業(畜産・酪農)　高知　優先度 C</p></header>
+<p class="who2">須内・市川　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0889220044">0889-22-0044</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県高知市丸ノ内１－２－２０</span>
+<span class="why">ハローワークで1名募集中／機械操作及び飼料作物栽培業務等（畜産試験場）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="122" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">122</span>
+<h2>エイジス四国 株式会社</h2>
+<p class="meta">1次産業(畜産・酪農)　香川　優先度 C</p></header>
+<p class="who2">派遣営業担当 を呼んでもらう</p>
+<a class="tel" href="tel:0878144555">087-814-4555</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県高松市松縄町５１－２１</span>
+<span class="why">ハローワークで1名募集中／スーパーマーケットでの畜産業務（高知市竹島町）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="123" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">123</span>
+<h2>株式会社 西岡商会</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 C</p></header>
+<p class="who2">西岡　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0885323339">0885-32-3339</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県小松島市中郷町前田１０５－１</span>
+<span class="why">ハローワークで4名募集中／農業機械のメンテナンスサービス／農業機械の販売・サー</span></div>
+<a class="open" href="http://nishioka-chance.sakura.ne.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="124" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">124</span>
+<h2>香川県農業協同組合 東かがわ統括店</h2>
+<p class="meta">1次産業(農業)　香川　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0879253477">0879-25-3477</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県東かがわ市中筋４５－１</span>
+<span class="why">ハローワークで4名募集中／金融商品窓口職員【大内丹生支店】／金融商品窓口職員【</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="125" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">125</span>
+<h2>香川県農業協同組合 小豆統括店</h2>
+<p class="meta">1次産業(農業)　香川　優先度 C</p></header>
+<p class="who2">カサイ　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0879619063">0879-61-9063</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県小豆郡小豆島町池田１１０１－１</span>
+<span class="why">ハローワークで4名募集中／事務職員／事務職員（町役場内の勤務）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="126" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">126</span>
+<h2>ランスタッド株式会社 松山支店</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">コーディネーター を呼んでもらう</p>
+<a class="tel" href="tel:05017446711">050-1744-6711</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市三番町４丁目４番地６</span>
+<span class="why">ハローワークで4名募集中／農業用機械等の製造メーカーでの溶接作業／農機部品ピッ</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="127" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">127</span>
+<h2>株式会社 ベジファーム板野</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 C</p></header>
+<p class="who2">竹内　総務 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886791788">088-679-1788</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県板野郡板野町大寺字野神１７２番地１</span>
+<span class="why">ハローワークで3名募集中／野菜苗の育苗管理／野菜苗の育苗管理【短期】</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="128" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">128</span>
+<h2>（有）河野園芸</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">担当 を呼んでもらう</p>
+<a class="tel" href="tel:0895723301">0895-72-3301</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県南宇和郡愛南町城辺甲４１７４番</span>
+<span class="why">ハローワークで3名募集中／作業員（フルタイムパート）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="129" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">129</span>
+<h2>愛媛県農業共済組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0899418135">089-941-8135</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市二番町４丁目４番地２</span>
+<span class="why">ハローワークで3名募集中／総合職</span></div>
+<a class="open" href="http://www.e-nosai.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="130" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">130</span>
+<h2>株式会社 Ａｌｌｅｓｔ</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0899937721">089-993-7721</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県松山市土居田町１４３－３</span>
+<span class="why">ハローワークで3名募集中／農業機械の買取・整備・販売</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="131" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">131</span>
+<h2>てけてけ農園</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">園主 を呼んでもらう</p>
+<a class="tel" href="tel:09038453266">090-3845-3266</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県須崎市下分甲１０３４</span>
+<span class="why">ハローワークで3名募集中／農業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="132" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">132</span>
+<h2>有限会社 松下温故堂（松下温故堂すみれ調剤薬局）</h2>
+<p class="meta">1次産業(農業)　香川　優先度 C</p></header>
+<p class="who2">山本　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0877357477">0877-35-7477</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県善通寺市上吉田町二丁目４番３３号</span>
+<span class="why">ハローワークで2名募集中／薬剤師（農業部門）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="133" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">133</span>
+<h2>香川県農業協同組合 さぬき統括店</h2>
+<p class="meta">1次産業(農業)　香川　優先度 C</p></header>
+<p class="who2">総合課 を呼んでもらう</p>
+<a class="tel" href="tel:0878947007">087-894-7007</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県さぬき市志度９００番地</span>
+<span class="why">ハローワークで2名募集中／一般事務（長尾支店）／一般事務（鴨庄支店）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="134" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">134</span>
+<h2>香川県農業協同組合 中讃営農センター</h2>
+<p class="meta">1次産業(農業)　香川　優先度 C</p></header>
+<p class="who2">上原　坂出みかん共撰場 さん を呼んでもらう</p>
+<a class="tel" href="tel:0877470481">0877-47-0481</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県綾歌郡綾川町陶４７４２番地１</span>
+<span class="why">ハローワークで2名募集中／事務／生産資材の販売（ふれあいセンター松山店）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="135" data-ken="香川" data-pri="C">
+<header class="ch"><span class="num">135</span>
+<h2>香川県厚生農業協同組合連合会</h2>
+<p class="meta">1次産業(農業)　香川　優先度 C</p></header>
+<p class="who2">美馬　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0878442383">087-844-2383</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">香川県高松市屋島西町２１０５番１７</span>
+<span class="why">ハローワークで2名募集中／事務職（総合職）</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="136" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">136</span>
+<h2>西宇和農業協同組合</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">宮本　総務管理部 さん を呼んでもらう</p>
+<a class="tel" href="tel:0894241111">0894-24-1111</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県八幡浜市江戸岡１丁目１２－１０</span>
+<span class="why">ハローワークで2名募集中／販売員（経済センター）／経験不問／選果場一般事務員（</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="137" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">137</span>
+<h2>障害者施設 きくま</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">人事 を呼んでもらう</p>
+<a class="tel" href="tel:0899095454">089-909-5454</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県今治市菊間町浜１１４７番地３</span>
+<span class="why">ハローワークで2名募集中／農業作業員／今治市菊間町西山／アグリ事業部</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="138" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">138</span>
+<h2>高知県農業協同組合幡多地区</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0880345555">0880-34-5555</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県四万十市右山五月町７番３３号</span>
+<span class="why">ハローワークで2名募集中／共済事務（大方支所）／販売（ＪＡグリーン四万十店）／</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="139" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">139</span>
+<h2>協伸（株）</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0888633090">088-863-3090</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県南国市大そね乙８７５ー１</span>
+<span class="why">ハローワークで2名募集中／農業用副資材の営業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="140" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">140</span>
+<h2>土佐くろしお農業協同組合</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">橋田　 さん を呼んでもらう</p>
+<a class="tel" href="tel:0889428010">0889-42-8010</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県須崎市多ノ郷甲３７５１－１１</span>
+<span class="why">ハローワークで2名募集中／集配送業務（大間集出荷場）</span></div>
+<a class="open" href="http://www.tosakuroshio.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="141" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">141</span>
+<h2>徳島県施設農業協同組合連合会</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 C</p></header>
+<p class="who2">西田、逢坂　事務局長、総務課長代理 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886342662">088-634-2662</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市北佐古一番町５番１２号</span>
+<span class="why">ハローワークで1名募集中／事務職</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="142" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">142</span>
+<h2>徳島市農業協同組合</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 C</p></header>
+<p class="who2">益田　総務人事課 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886226335">088-622-6335</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市万代町５丁目７１－１１</span>
+<span class="why">ハローワークで1名募集中／農産物直売所 レジ・販売</span></div>
+<a class="open" href="http://ww2.ja-tcc-info.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="143" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">143</span>
+<h2>国府町農事放送農業協同組合</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 C</p></header>
+<p class="who2">森岡　参事 さん を呼んでもらう</p>
+<a class="tel" href="tel:0886426050">088-642-6050</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県徳島市国府町日開８０８－１及び８１１－１</span>
+<span class="why">ハローワークで1名募集中／ケーブルテレビの番組制作《未経験者歓迎！》</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="144" data-ken="徳島" data-pri="C">
+<header class="ch"><span class="num">144</span>
+<h2>株式会社 あぐり家 農機具ランドあぐり家徳島鴨島支店</h2>
+<p class="meta">1次産業(農業)　徳島　優先度 C</p></header>
+<p class="who2">藤森　採用担当者 さん を呼んでもらう</p>
+<a class="tel" href="tel:0888800077">088-880-0077</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">徳島県吉野川市鴨島町知恵島字中須賀１５６０</span>
+<span class="why">ハローワークで1名募集中／農業機械の軽微作業／就業時間や労働日数相談可</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="145" data-ken="愛媛" data-pri="C">
+<header class="ch"><span class="num">145</span>
+<h2>農業生産法人 （株）ひのいちご園</h2>
+<p class="meta">1次産業(農業)　愛媛　優先度 C</p></header>
+<p class="who2">日野瑞希　担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0897557930">0897-55-7930</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">愛媛県西条市玉津４８９－２</span>
+<span class="why">ハローワークで1名募集中／いちご栽培・販売管理・スイーツ加工販売業務</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="146" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">146</span>
+<h2>農業ネットワーク高知協同組合</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">徳橋　採用担当 さん を呼んでもらう</p>
+<a class="tel" href="tel:0887537048">0887-53-7048</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県香美市土佐山田町加茂７９９番地４</span>
+<span class="why">ハローワークで1名募集中／事務・配送・軽作業【土日休み】</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="147" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">147</span>
+<h2>ヤンマーアグリ株式会社 高知工場</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">人事総務部 人事部 を呼んでもらう</p>
+<a class="tel" href="tel:0862768111">086-276-8111</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県香美市土佐山田町北本町２丁目２６３</span>
+<span class="why">ハローワークで1名募集中／農業関連機械（トラクター、コンバイン、田植機）の</span></div>
+<a class="open" href="http://www.yanmar.com/jp/about/company/yag" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="148" data-ken="高知" data-pri="C">
+<header class="ch"><span class="num">148</span>
+<h2>公益財団法人 三原村農業公社</h2>
+<p class="meta">1次産業(農業)　高知　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0880463240">0880-46-3240</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">高知県幡多郡三原村宮ノ川１２７１－１５２</span>
+<span class="why">ハローワークで1名募集中／ユズ加工製造作業</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+
+</div>
+
+<p class="foot">1次産業　四国　148件。求人・公開情報から機械で収集し、4軸で優先度を付けています。<br>結果ボタンを押すと自動で宮崎さんに送信されます。<span id="q"></span></p>
+</div></div>
+
+<script>
+function today(){const d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+const KEY='call-ichiji-2a14d53f69c4';
+const QKEY='call-ichiji-2a14d53f69c4-queue';
+const WKEY='call-who';
+let WHO = (localStorage.getItem(WKEY)||'').trim();
+
+function showWho(){
+  document.getElementById('whoname').textContent = WHO ? WHO+'さん' : '—';
+}
+function askWho(manual){
+  const g=document.getElementById('gate');
+  document.getElementById('whoin').value = manual ? WHO : '';
+  document.getElementById('whoerr').textContent='';
+  g.classList.add('on');
+  setTimeout(()=>document.getElementById('whoin').focus(),50);
+}
+function saveWho(){
+  const v=document.getElementById('whoin').value.trim();
+  if(v.length<1){ document.getElementById('whoerr').textContent='お名前を入れてください。'; return; }
+  if(v.length>20){ document.getElementById('whoerr').textContent='短めでお願いします（20文字まで）。'; return; }
+  WHO=v; try{ localStorage.setItem(WKEY,v); }catch(e){}
+  document.getElementById('gate').classList.remove('on');
+  showWho();
+  flush();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter' && document.getElementById('gate').classList.contains('on')) saveWho();
+});
+const FORM='https://docs.google.com/forms/d/e/1FAIpQLSfhpkW89vWEFWjkrgWr1qx0UXhHTjksiSmCa9IOyfcJcQO8bQ/formResponse';
+const F={who:'entry.918375088',name:'entry.752989491',tel:'entry.729330221',
+         res:'entry.1257351313',memo:'entry.1976499710',no:'entry.103122825'};
+
+function qGet(){ try{ return JSON.parse(localStorage.getItem(QKEY)||'[]'); }catch(e){ return []; } }
+function qSet(a){ try{ localStorage.setItem(QKEY, JSON.stringify(a)); }catch(e){} qShow(); }
+function qShow(){
+  const n=qGet().length, el=document.getElementById('q');
+  if(el) el.textContent = n ? '（未送信 '+n+'件。電波が戻ると自動で送られます）' : '';
+}
+
+function enqueue(card, result){
+  qSet(qGet().concat([{
+    no: card.dataset.i,
+    name: card.querySelector('h2').textContent.trim(),
+    tel: card.querySelector('.tel').textContent.trim(),
+    res: result,
+    memo: card.querySelector('.memo').value || ''
+  }]));
+  flush();
+}
+
+let sending=false;
+function flush(){
+  if(sending || !WHO) return;
+  const q=qGet(); if(!q.length){ qShow(); return; }
+  sending=true;
+  const x=q[0];
+  const b=new URLSearchParams();
+  b.append(F.who,WHO); b.append(F.name,x.name); b.append(F.tel,x.tel);
+  b.append(F.res,x.res); b.append(F.memo,x.memo); b.append(F.no,x.no);
+  fetch(FORM,{method:'POST',mode:'no-cors',body:b})
+    .then(()=>{ qSet(qGet().slice(1)); sending=false; flush(); })
+    .catch(()=>{ sending=false; });
+}
+window.addEventListener('online', flush);
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) flush(); });
+
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){} }
+function put(i,k,v){ const o=load(); o[i]=o[i]||{}; o[i][k]=v; save(o); }
+
+function mark(b){
+  const c=b.closest('.card');
+  const d=today();
+  c.setAttribute('data-result', b.dataset.v);
+  c.querySelector('.rt').textContent = b.dataset.v;
+  c.querySelector('.rd').textContent = d;
+  put(c.dataset.i,'r',b.dataset.v); put(c.dataset.i,'d',d);
+  enqueue(c, b.dataset.v);
+  count();
+}
+function undo(b){
+  const c=b.closest('.card');
+  c.setAttribute('data-result','');
+  c.querySelector('.rt').textContent='';
+  c.querySelector('.rd').textContent='';
+  put(c.dataset.i,'r',''); put(c.dataset.i,'d','');
+  enqueue(c, '取消');
+  count();
+}
+function memo(i){
+  const c=i.closest('.card');
+  i.setAttribute('value', i.value);
+  put(c.dataset.i,'m',i.value);
+  if(c.getAttribute('data-result')) enqueue(c, c.getAttribute('data-result'));
+}
+
+function restore(){
+  const o=load();
+  document.querySelectorAll('.card').forEach(c=>{
+    const x=o[c.dataset.i]; if(!x) return;
+    if(x.r){ c.setAttribute('data-result',x.r);
+      c.querySelector('.rt').textContent=x.r;
+      c.querySelector('.rd').textContent=x.d||''; }
+    if(x.m){ const i=c.querySelector('.memo'); i.value=x.m; i.setAttribute('value',x.m); }
+  });
+}
+
+function report(btn){
+  const cards=[...document.querySelectorAll('.card')].filter(c=>c.getAttribute('data-result'));
+  if(!cards.length){ btn.textContent='まだ結果がありません'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); return; }
+  const cnt=v=>cards.filter(c=>c.getAttribute('data-result')===v).length;
+  let t='【'+(WHO||'担当')+'】'+today()+' 架電結果\n';
+  t+='架電 '+cards.length+'／アポ '+cnt('アポ')+'／決裁者 '+cnt('決裁者と話した')+'／NG '+cnt('NG')+'\n';
+  const pick=cards.filter(c=>['アポ','決裁者と話した'].includes(c.getAttribute('data-result')) || c.querySelector('.memo').value);
+  if(pick.length){
+    t+='\n';
+    pick.forEach(c=>{
+      const m=c.querySelector('.memo').value;
+      t+='・'+c.querySelector('h2').textContent.trim()+'（'+c.getAttribute('data-result')+'）'+(m?' '+m:'')+'\n';
+    });
+  }
+  const done=()=>{ btn.textContent='コピーしました'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); };
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,()=>fb(t,done)); }
+  else fb(t,done);
+}
+function fb(t,cb){
+  const a=document.createElement('textarea'); a.value=t;
+  a.style.cssText='position:fixed;top:0;left:0;opacity:0';
+  document.body.appendChild(a); a.focus(); a.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(a); cb();
+}
+function flt(b){
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  document.getElementById('list').setAttribute('data-local-filter', b.dataset.f);
+}
+function vw(b){
+  document.querySelectorAll('.view').forEach(t=>t.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  document.getElementById('app').setAttribute('data-local-view', b.dataset.v);
+  window.scrollTo(0,0);
+}
+function count(){
+  const cards=[...document.querySelectorAll('.card')];
+  const done=cards.filter(c=>c.getAttribute('data-result'));
+  document.getElementById('s-left').textContent=cards.length-done.length;
+  document.getElementById('s-done').textContent=done.length;
+  document.getElementById('s-apo').textContent=done.filter(c=>c.getAttribute('data-result')==='アポ').length;
+  document.getElementById('s-ng').textContent=done.filter(c=>c.getAttribute('data-result')==='NG').length;
+  document.getElementById('s-bar').style.width=(done.length/cards.length*100)+'%';
+}
+restore();
+count();
+qShow();
+showWho();
+if(WHO){ flush(); } else { askWho(0); }
+</script>
+
+<style>
+.card[data-hide="1"]{display:none!important}
+#f-ken,#f-pri{flex:1;min-width:0;font:inherit;padding:9px 10px;border-radius:10px;
+  border:1px solid #2f3a4a;background:#131a24;color:#e6edf3}
+</style>
+<script>
+// テンプレに無い絞り込みを後から足す。表示/非表示は data-hide でやり、
+// count() は隠れているカードを数えないように上書きする。
+function narrow(){
+  const k=document.getElementById('f-ken').value,
+        p=document.getElementById('f-pri').value;
+  document.querySelectorAll('.card').forEach(c=>{
+    const ng=(k && c.dataset.ken!==k)||(p && c.dataset.pri!==p);
+    c.setAttribute('data-hide', ng?'1':'');
+  });
+  count();
+}
+function count(){
+  const cards=[...document.querySelectorAll('.card')].filter(c=>c.getAttribute('data-hide')!=='1');
+  const done=cards.filter(c=>c.getAttribute('data-result'));
+  const g=id=>document.getElementById(id);
+  g('s-left').textContent=cards.length-done.length;
+  g('s-done').textContent=done.length;
+  g('s-apo').textContent=done.filter(c=>['アポ','動画提供OK'].includes(c.getAttribute('data-result'))).length;
+  g('s-ng').textContent=done.filter(c=>c.getAttribute('data-result')==='NG').length;
+  const bar=g('s-bar'); if(bar) bar.style.width=(cards.length?done.length/cards.length*100:0)+'%';
+}
+count();
+</script>
+</body>
+</html>
