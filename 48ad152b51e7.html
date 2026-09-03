@@ -1,0 +1,2501 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>葬儀　近畿　123件</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --ground:#E9EEEB; --surface:#FFFFFF; --raise:#F6F9F7;
+  --line:#BFCCC5; --line-soft:#D9E2DD;
+  --ink:#0D1714; --muted:#44534C; --faint:#6B7A73;
+  --accent:#0F5A42; --accent-ink:#0F5A42; --accent-soft:#D5E8DF;
+  --dead:#93321F; --dead-soft:#F9E4DE; --dead-line:#D9A091;
+  --ok:#166B41; --ok-soft:#D3EBDD;
+  --ng:#93321F;
+  --shadow:0 1px 2px rgba(13,23,20,.10),0 6px 16px rgba(13,23,20,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1210; --surface:#1A2320; --raise:#222D29;
+    --line:#3A4842; --line-soft:#2C3833;
+    --ink:#F0F5F2; --muted:#B6C4BD; --faint:#8595 8E;
+    --faint:#8B9A93;
+    --accent:#67D6AE; --accent-ink:#67D6AE; --accent-soft:#13332A;
+    --dead:#F4A08A; --dead-soft:#33201B; --dead-line:#7A4033;
+    --ok:#71D69B; --ok-soft:#15321F;
+    --ng:#F4A08A;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 6px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1210; --surface:#1A2320; --raise:#222D29;
+  --line:#3A4842; --line-soft:#2C3833;
+  --ink:#F0F5F2; --muted:#B6C4BD; --faint:#8B9A93;
+  --accent:#67D6AE; --accent-ink:#67D6AE; --accent-soft:#13332A;
+  --dead:#F4A08A; --dead-soft:#33201B; --dead-line:#7A4033;
+  --ok:#71D69B; --ok-soft:#15321F;
+  --ng:#F4A08A;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 6px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+  font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+.wrap{max-width:680px;margin:0 auto;padding:0 12px 72px}
+
+header.top{position:sticky;top:0;z-index:20;background:var(--ground);
+  padding:14px 0 11px;border-bottom:2px solid var(--line)}
+.title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.title h1{margin:0;font-size:18px;font-weight:900;letter-spacing:.01em}
+.title .who{font-size:12.5px;color:var(--muted)}
+.whoedit{font:inherit;font-size:12px;color:var(--accent-ink);background:none;
+  border:0;border-bottom:1px solid var(--line);padding:0 1px;cursor:pointer}
+#gate{position:fixed;inset:0;z-index:99;background:var(--ground);
+  display:none;align-items:center;justify-content:center;padding:24px}
+#gate.on{display:flex}
+.gatebox{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;box-shadow:var(--shadow);padding:24px}
+.gatebox h2{font-size:20px;font-weight:900;margin:0 0 6px}
+.gatebox p{font-size:13.5px;color:var(--muted);margin:0 0 16px;line-height:1.7}
+#whoin{width:100%;padding:14px;font:inherit;font-size:17px;border:2px solid var(--line);
+  border-radius:10px;background:var(--raise);color:var(--ink)}
+#whoin:focus{outline:none;border-color:var(--accent)}
+.gatego{width:100%;margin-top:12px;padding:14px;font:inherit;font-size:16px;font-weight:700;
+  border:0;border-radius:10px;background:var(--accent);color:#fff}
+.gateerr{font-size:13px;color:var(--dead);margin-top:8px;min-height:1.2em}
+.views{display:flex;gap:8px;margin-top:11px}
+.view{flex:1;padding:10px 0;text-align:center;font:inherit;font-size:14px;font-weight:700;
+  border:2px solid var(--line);background:var(--surface);color:var(--muted);
+  border-radius:9px;cursor:pointer}
+.view[aria-pressed="true"]{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.stats{display:flex;margin-top:10px;border:2px solid var(--line);
+  border-radius:10px;overflow:hidden;background:var(--surface)}
+.stat{flex:1;text-align:center;padding:8px 4px;border-right:1px solid var(--line-soft)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:"Roboto Mono",monospace;font-size:20px;
+  font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;color:var(--muted);letter-spacing:.05em}
+.stat.a b{color:var(--ok)} .stat.n b{color:var(--ng)}
+.bar{height:5px;background:var(--line-soft);border-radius:3px;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.tabs{display:flex;gap:6px;margin-top:10px}
+.tab{flex:1;padding:8px 0;text-align:center;font:inherit;font-size:13px;font-weight:500;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  border-radius:8px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--raise);color:var(--ink);
+  border-color:var(--accent);font-weight:700}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:15px;margin-top:11px;box-shadow:var(--shadow)}
+.ch{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;align-items:baseline}
+.num{grid-row:1/3;font-family:"Roboto Mono",monospace;font-size:12px;color:var(--faint);
+  font-variant-numeric:tabular-nums;padding-top:4px}
+.ch h2{margin:0;font-size:17px;font-weight:700;line-height:1.4;text-wrap:balance}
+.meta{margin:0;font-size:13px;color:var(--muted)}
+.tel{display:block;margin:12px 0 0;padding:15px;text-align:center;
+  background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent);
+  border-radius:10px;font-family:"Roboto Mono",monospace;font-size:22px;font-weight:700;
+  letter-spacing:.04em;text-decoration:none;font-variant-numeric:tabular-nums}
+.dead{margin-top:11px;padding:10px 12px;background:var(--dead-soft);
+  border:1px solid var(--dead-line);border-left:4px solid var(--dead);border-radius:0 9px 9px 0}
+.dl{display:block;font-size:13.5px;font-weight:700;color:var(--dead)}
+.du{display:block;font-family:"Roboto Mono",monospace;font-size:12px;
+  color:var(--ink);word-break:break-all;margin-top:3px}
+.open{display:inline-block;margin-top:9px;font-size:13px;color:var(--accent-ink);
+  text-decoration:none;font-weight:500}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}
+.res{padding:12px 2px;font:inherit;font-size:13.5px;font-weight:700;
+  border:1px solid var(--line);background:var(--raise);color:var(--ink);
+  border-radius:9px;cursor:pointer}
+.res:hover{border-color:var(--accent);color:var(--accent-ink)}
+.res[data-v="アポ"]{color:var(--ok);border-color:var(--ok);background:var(--ok-soft)}
+.res[data-v="NG"]{color:var(--ng);border-color:var(--dead-line)}
+.res:focus-visible,.tab:focus-visible,.view:focus-visible,.undo:focus-visible,
+.memo:focus-visible,.tel:focus-visible,.open:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.done{display:none;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;
+  background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;font-size:14px}
+.done .rt{color:var(--accent-ink);font-weight:700}
+.done .rd{color:var(--muted);font-size:12px;font-family:"Roboto Mono",monospace}
+.undo{margin-left:auto;padding:6px 13px;font:inherit;font-size:13px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  border-radius:7px;cursor:pointer}
+.memo{display:none;width:100%;margin-top:8px;padding:11px;font:inherit;font-size:14px;
+  border:1px solid var(--line);border-radius:9px;background:var(--raise);color:var(--ink)}
+.card[data-result]:not([data-result=""]) .acts{display:none}
+.card[data-result]:not([data-result=""]) .done{display:flex}
+.card[data-result]:not([data-result=""]) .memo{display:block}
+.card[data-result="NG"]{opacity:.6}
+.card[data-result="NG"] .done{background:var(--dead-soft);border-color:var(--dead-line)}
+.card[data-result="NG"] .rt{color:var(--ng)}
+.card[data-result="アポ"]{border:2px solid var(--ok)}
+.card[data-result="アポ"] .done{background:var(--ok-soft);border-color:var(--ok)}
+.card[data-result="アポ"] .rt{color:var(--ok)}
+
+.who2{margin:2px 0 8px;font-size:15px;font-weight:700;color:var(--accent-ink);
+  background:var(--accent-soft);display:inline-block;padding:5px 12px;border-radius:8px}
+.why{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+.rep{margin-top:10px}
+#q{color:var(--warn,#f0a);font-weight:700}
+
+.repbtn{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);font:inherit;font-weight:700;font-size:15px}
+.repbtn:active{opacity:.7}
+/* 画面切替と絞り込みは閲覧者ごと（data-local-*） */
+#app[data-local-view="list"] #rules{display:none}
+#app[data-local-view="rules"] #list,
+#app[data-local-view="rules"] .stats,
+#app[data-local-view="rules"] .bar,
+#app[data-local-view="rules"] .tabs{display:none}
+#list[data-local-filter="todo"] .card[data-result="決裁者と話した"],
+#list[data-local-filter="todo"] .card[data-result="アポ"],
+#list[data-local-filter="todo"] .card[data-result="NG"]{display:none}
+#list[data-local-filter="done"] .card[data-result=""]{display:none}
+
+.blk{background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:16px;margin-top:11px;box-shadow:var(--shadow)}
+.blk h3{margin:0 0 10px;font-size:16px;font-weight:900;line-height:1.45}
+.blk.warn{border-left:5px solid var(--dead)}
+.blk.warn h3{color:var(--dead)}
+.blk.accent{border-left:5px solid var(--accent)}
+.blk.accent h3{color:var(--accent-ink)}
+.blk p{margin:0 0 8px;font-size:14.5px}
+.note{color:var(--muted);font-size:13px!important;line-height:1.65}
+q{display:block;margin:7px 0;padding:11px 13px;background:var(--raise);
+  border-radius:9px;font-size:14.5px;quotes:"「" "」";white-space:pre-line}
+.say{width:100%;border-collapse:collapse;margin-bottom:9px}
+.say td{padding:5px 0;font-size:14.5px;vertical-align:top}
+.say td.x{color:var(--dead);font-weight:900;width:1.8em}
+.say td.o{color:var(--ok);font-weight:900;width:1.8em}
+.flow{margin:0;padding-left:1.3em}
+.flow li{margin-bottom:13px;font-size:14.5px}
+.flow li b{font-size:15px}
+.key{display:inline-block;margin-left:7px;padding:2px 8px;background:var(--dead-soft);
+  color:var(--dead);border-radius:5px;font-size:11.5px;font-weight:700;vertical-align:middle}
+.price{width:100%;border-collapse:collapse}
+.price th{text-align:left;padding:8px 12px 8px 0;font-size:14px;white-space:nowrap;
+  vertical-align:top;color:var(--muted);border-bottom:1px solid var(--line-soft)}
+.price td{padding:8px 0;font-size:14.5px;border-bottom:1px solid var(--line-soft)}
+.qa{margin:0}
+.qa dt{font-weight:700;font-size:14.5px;margin-top:11px;color:var(--ink)}
+.qa dt:before{content:"「";color:var(--faint)}
+.qa dt:after{content:"」";color:var(--faint)}
+.qa dd{margin:3px 0 0;font-size:14px;color:var(--muted)}
+.qa dd b{color:var(--ink)}
+.dont{margin:0;padding-left:1.2em}
+.dont li{font-size:14.5px;margin-bottom:5px}
+.foot{margin-top:22px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.8}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div id="gate"><div class="gatebox">
+  <h2>お名前を入れてください</h2>
+  <p>誰の架電かを記録するために使います。<br>
+     この端末に保存されるので、次からは聞かれません。</p>
+  <input id="whoin" type="text" placeholder="例：山田" autocomplete="name">
+  <button class="gatego" onclick="saveWho()">はじめる</button>
+  <p class="gateerr" id="whoerr"></p>
+</div></div>
+<div class="wrap"><div id="app" data-local-view="list">
+<header class="top">
+  <div class="title"><h1>葬儀　近畿　123件</h1>
+    <span class="who"><b id="whoname">—</b>｜葬儀・TikTok運用コンサル　<button class="whoedit" onclick="askWho(1)">名前を変える</button></span></div>
+  <artifact-local>
+  <div class="views">
+    <button class="view" data-v="list" aria-pressed="true" onclick="vw(this)">リスト</button>
+    <button class="view" data-v="rules" aria-pressed="false" onclick="vw(this)">ルールと台本</button>
+  </div>
+  </artifact-local>
+  <div class="stats">
+    <div class="stat"><b id="s-left">123</b><span>残り</span></div>
+    <div class="stat"><b id="s-done">0</b><span>架電済</span></div>
+    <div class="stat a"><b id="s-apo">0</b><span>アポ</span></div>
+    <div class="stat n"><b id="s-ng">0</b><span>NG</span></div>
+  </div>
+  <div class="bar"><i id="s-bar"></i></div>
+  <artifact-local>
+  <div class="tabs">
+    <button class="tab" data-f="todo" aria-pressed="true" onclick="flt(this)">未架電</button>
+    <button class="tab" data-f="done" aria-pressed="false" onclick="flt(this)">架電済</button>
+    <button class="tab" data-f="all" aria-pressed="false" onclick="flt(this)">全件</button>
+  </div>
+  </artifact-local>
+  <div class="rep"><button class="repbtn" onclick="report(this)">結果をコピー（宮崎さんに送る用）</button></div>
+  <div class="tabs" style="margin-top:6px">
+    <select id="f-ken" onchange="narrow()"><option value="">都道府県（すべて）</option><option>京都</option><option>兵庫</option><option>和歌山</option><option>大阪</option><option>奈良</option><option>滋賀</option></select>
+    <select id="f-pri" onchange="narrow()"><option value="">優先度（すべて）</option><option>S</option><option>A</option><option>B</option><option>C</option></select>
+  </div>
+</header>
+
+<div id="rules">
+<section class="blk accent">
+<h3>このリストについて</h3>
+<p><b>葬儀　123件。</b>ハローワークの求人・公開情報・各社サイトから機械で集めて、
+4つの軸（誰が出るか／どれだけ困っているか／サイトの状態／SNSの状況）で優先度を付けています。</p>
+<p>このうち<b>0件は社長・代表・専務クラスか携帯直通</b>、
+<b>66件は相手の名前が分かっています</b>。
+名前が出ているものは、受付で「◯◯さんいらっしゃいますか」と名指しできます。
+これだけで突破率がまるで変わります。知り合いだと思われるからです。</p>
+<p class="note">用件を先に言わないこと。「◯◯さんお願いします」だけで、いったん止める。</p>
+</section>
+
+<section class="blk warn">
+<h3>カードの赤い枠の見方</h3>
+<p>1行目が<b>SNSの状況</b>です。このリストの123件は<b>TikTokをやっていません</b>。
+「Instagramはあるが TikTok なし」なら、発信自体はできる会社ということです。
+「SNS一切なし」は、ゼロから作る提案になります。</p>
+<p>3行目が<b>架電の切り口</b>。募集人数や創業年など、その会社固有の事実が入っています。
+ここを最初の20秒で使ってください。</p>
+</section>
+
+<section class="blk">
+<h3>電話の型（40秒）</h3>
+<p><b>① 受付</b><br>「お世話になります。◯◯さんいらっしゃいますか」<br>
+<span class="note">会社名は聞かれたら答える。先に名乗ると営業だと分かって止められます。</span></p>
+<p><b>② 本人が出たら</b><br>
+「突然すみません、フリードマーケティングの◯◯と申します。
+◯◯（切り口の事実）と拝見しまして、お電話しました」</p>
+<p><b>③ 本題</b><br>
+「今、採用も集客もTikTokから入ってくる流れが強くて、
+同業さんで再生数が伸びている事例が出てきています。
+御社まだやられていないと思うので、その話をと思いまして」</p>
+<p><b>④ アポ打診</b><br>
+「20分だけオンラインで、同業でどんな動画が伸びているかと、
+御社だと何が撮れそうかをお見せするお時間いただけませんか」</p>
+</section>
+
+<section class="blk">
+<h3>葬儀で効く切り口</h3>
+<p>創業年が入っている先は<b>「◯◯年からやられてるんですね」</b>から入れます。
+歴史があるほど「若い世代に知られていない」という課題が刺さります。</p>
+<p>探されるのは深夜や早朝、スマホからです。そこで名前が出てくるかどうかがすべてで、
+比較検討の時間がほとんどない業種です。</p>
+<p class="note">生々しい話になりやすいので、遺族・故人に踏み込んだ表現は避けること。
+「知ってもらう」「相談しやすくする」の線で話す。</p>
+</section>
+
+<section class="blk">
+<h3>結果ボタンの使い分け</h3>
+<p><b>決裁者と話した</b> … 本人に繋がったが、その場では決まらなかった場合。ここが多いなら台本の後半を直します。<br>
+<b>アポ</b> … 日時が決まった。<br>
+<b>動画提供OK</b> … アポではないが、素材をもらえることになった。ここから入る先も多いです。<br>
+<b>NG</b> … 明確に断られた。再勧誘はしないので、必ず押してください。</p>
+</section>
+</div>
+
+<div id="list" data-local-filter="todo">
+<article class="card" data-result="" data-i="1" data-ken="京都" data-pri="S">
+<header class="ch"><span class="num">1</span>
+<h2>おのえメモリアル(株)</h2>
+<p class="meta">葬儀　京都　優先度 S</p></header>
+<p class="who2">尾上雄紀　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0772425555">0772-42-5555</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1971 年創業</span></div>
+<a class="open" href="http://onoe-memorial.com" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/onoememorial" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="2" data-ken="京都" data-pri="S">
+<header class="ch"><span class="num">2</span>
+<h2>(有)京都日葬</h2>
+<p class="meta">葬儀　京都　優先度 S</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0758114242">075-811-4242</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://kyoto-nissou.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kyoto.nissou" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="3" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">3</span>
+<h2>(株)極楽堂</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0727551900">072-755-1900</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1961 年創業</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/kawanishi/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="4" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">4</span>
+<h2>(株)大西</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0727823563">072-782-3563</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/exceed/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="5" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">5</span>
+<h2>(株)ディス</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0797343232">0797-34-3232</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/ashiya/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="6" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">6</span>
+<h2>(株)花六総本店</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0788512392">078-851-2392</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1974 年創業</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/higashinada/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="7" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">7</span>
+<h2>(株)はなぎく</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0787873434">078-787-3434</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/tarumi/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="8" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">8</span>
+<h2>(株)花保</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0783615549">078-361-5549</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1920 年創業</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/kobeyamate/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="9" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">9</span>
+<h2>(株)青木葬祭本店</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0787320203">078-732-0203</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1920 年創業</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/sumaaoki/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="10" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">10</span>
+<h2>(株)アトリアス</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0782621131">078-262-1131</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2016 年創業</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/nada/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="11" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">11</span>
+<h2>(株)明石十方社</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0789230372">078-923-0372</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/akashi/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="12" data-ken="兵庫" data-pri="S">
+<header class="ch"><span class="num">12</span>
+<h2>(株)姫路葬祭センター</h2>
+<p class="meta">葬儀　兵庫　優先度 S</p></header>
+<p class="who2">塚本恵則　理事長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0792851010">079-285-1010</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1995 年創業</span></div>
+<a class="open" href="https://www.cleri-net.or.jp/halls/nozato/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/coop_sogi_cleri" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCSVZTkoLDz1k5BmCL6zdtlA" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="13" data-ken="和歌山" data-pri="S">
+<header class="ch"><span class="num">13</span>
+<h2>(株)アスカフューネラルサプライ</h2>
+<p class="meta">葬儀　和歌山　優先度 S</p></header>
+<p class="who2">田中亮　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0735223456">0735-22-3456</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1952 年創業</span></div>
+<a class="open" href="https://asukafuneralsupply.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/asukafuneralsupply_info" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="14" data-ken="大阪" data-pri="S">
+<header class="ch"><span class="num">14</span>
+<h2>(株)ハナブ商店</h2>
+<p class="meta">葬儀　大阪　優先度 S</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0726222222">072-622-2222</a>
+<div class="dead"><span class="dl">YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1883 年創業</span></div>
+<a class="open" href="http://www.hanabu-ibaraki.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCqw3OJO8lQUxDdutcOZZxSg" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="15" data-ken="大阪" data-pri="S">
+<header class="ch"><span class="num">15</span>
+<h2>(株)紅葉山葬儀社</h2>
+<p class="meta">葬儀　大阪　優先度 S</p></header>
+<p class="who2">小森和信　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0663823442">06-6382-3442</a>
+<div class="dead"><span class="dl">Instagram／X／Facebook はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.momijiyama.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/maple_mountain_" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="16" data-ken="大阪" data-pri="S">
+<header class="ch"><span class="num">16</span>
+<h2>(株)セレモニーいけだ</h2>
+<p class="meta">葬儀　大阪　優先度 S</p></header>
+<p class="who2">小森正　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0727503345">072-750-3345</a>
+<div class="dead"><span class="dl">Instagram／YouTube／Facebook はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.cere-ikeda.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/ceremonyikeda" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/@cereikeda" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="17" data-ken="大阪" data-pri="S">
+<header class="ch"><span class="num">17</span>
+<h2>(株)八光殿</h2>
+<p class="meta">葬儀　大阪　優先度 S</p></header>
+<p class="who2">西川正章　代表取締役社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0729240042">072-924-0042</a>
+<div class="dead"><span class="dl">Instagram／YouTube はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1947 年創業</span></div>
+<a class="open" href="http://www.8510.net/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/hakkoden" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCQWwmHzQtwwer_j58fGyBow" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="18" data-ken="奈良" data-pri="S">
+<header class="ch"><span class="num">18</span>
+<h2>大協(株)</h2>
+<p class="meta">葬儀　奈良　優先度 S</p></header>
+<p class="who2">中村久雄　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0743521144">0743-52-1144</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1949 年創業</span></div>
+<a class="open" href="http://www.kazenomori-daikyo.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kazenomori_daikyo" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="19" data-ken="滋賀" data-pri="S">
+<header class="ch"><span class="num">19</span>
+<h2>長浜セレモニー(株)</h2>
+<p class="meta">葬儀　滋賀　優先度 S</p></header>
+<p class="who2">浜セレモニー　社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0749643415">0749-64-3415</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2001 年創業</span></div>
+<a class="open" href="http://www.nagahama-ceremony.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/nagahamaceremony" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="20" data-ken="滋賀" data-pri="S">
+<header class="ch"><span class="num">20</span>
+<h2>(株)クリスタル</h2>
+<p class="meta">葬儀　滋賀　優先度 S</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0748427779">0748-42-7779</a>
+<div class="dead"><span class="dl">Instagram／YouTube／X／Facebook はあるが TikTok なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2000 年創業</span></div>
+<a class="open" href="https://crystal-hall.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/sougino_kuchikomi" target="_blank" rel="noopener">Instagramを開く →</a>
+<a class="open" href="https://www.youtube.com/@user-qr2zm2ow5m" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="21" data-ken="京都" data-pri="A">
+<header class="ch"><span class="num">21</span>
+<h2>(有)いちたに</h2>
+<p class="meta">葬儀　京都　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0771624949">0771-62-4949</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.ichitani.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/ichitanihall_16" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="22" data-ken="京都" data-pri="A">
+<header class="ch"><span class="num">22</span>
+<h2>平城公益(株)</h2>
+<p class="meta">葬儀　京都　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0774725709">0774-72-5709</a>
+<div class="dead"><span class="dl">Facebook はあるが TikTok なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1981 年創業</span></div>
+<a class="open" href="http://0120-03-2669.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="23" data-ken="兵庫" data-pri="A">
+<header class="ch"><span class="num">23</span>
+<h2>(株)はなせ</h2>
+<p class="meta">葬儀　兵庫　優先度 A</p></header>
+<p class="who2">矢部　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0664880042">06-6488-0042</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1966 年創業</span></div>
+<a class="open" href="http://www.hanase-putihall.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/khanase2026" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="24" data-ken="和歌山" data-pri="A">
+<header class="ch"><span class="num">24</span>
+<h2>(有)木村葬祭</h2>
+<p class="meta">葬儀　和歌山　優先度 A</p></header>
+<p class="who2">木村頼文　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0739222787">0739-22-2787</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1966 年創業</span></div>
+<a class="open" href="http://www.memorial-kimura.net/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/memorial.kimura" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="25" data-ken="和歌山" data-pri="A">
+<header class="ch"><span class="num">25</span>
+<h2>(株)みちうえ</h2>
+<p class="meta">葬儀　和歌山　優先度 A</p></header>
+<p class="who2">道上喜紀　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0734892031">073-489-2031</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1919 年創業</span></div>
+<a class="open" href="http://www.michiue-sousai.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/michiue_sousai" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="26" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">26</span>
+<h2>(株)あい友社</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">野口真也　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0726433366">072-643-3366</a>
+<div class="dead"><span class="dl">Instagram／Facebook はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1983 年創業</span></div>
+<a class="open" href="http://www.aiyusya.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/aiyusya.ibaraki" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="27" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">27</span>
+<h2>(株)日本葬儀社</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0728274844">072-827-4844</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1975 年創業</span></div>
+<a class="open" href="http://www.nihon-sougisya.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/nisso.tengoku" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="28" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">28</span>
+<h2>(株)大真</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">佐藤政之　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0669947788">06-6994-7788</a>
+<div class="dead"><span class="dl">YouTube はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1976 年創業</span></div>
+<a class="open" href="https://www.daisinkaikan.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.youtube.com/channel/UCZ4a0GtDCD0LhzUkrrIfirg" target="_blank" rel="noopener">YouTubeを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="29" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">29</span>
+<h2>(株)川上葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">川上知紀　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0667173342">06-6717-3342</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1877 年創業</span></div>
+<a class="open" href="http://www.kawakami-sosai.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kawakami_funeral_home" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="30" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">30</span>
+<h2>(株)駕徳</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">佐原敏也　代表取締役社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0722385800">072-238-5800</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1986 年創業</span></div>
+<a class="open" href="https://kagotoku.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/kago.toku0620" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="31" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">31</span>
+<h2>(株)和泉セレモニーセンター</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0725444142">0725-44-4142</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1986 年創業</span></div>
+<a class="open" href="https://www.padoma.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/padomakuzunoha" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="32" data-ken="奈良" data-pri="A">
+<header class="ch"><span class="num">32</span>
+<h2>(有)青光社</h2>
+<p class="meta">葬儀　奈良　優先度 A</p></header>
+<p class="who2">自ら作成したパ　社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0742352515">0742-35-2515</a>
+<div class="dead"><span class="dl">Facebook はあるが TikTok なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1978 年創業</span></div>
+<a class="open" href="http://www.nara-seikosha.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="33" data-ken="奈良" data-pri="A">
+<header class="ch"><span class="num">33</span>
+<h2>(株)縁セレモニー</h2>
+<p class="meta">葬儀　奈良　優先度 A</p></header>
+<p class="who2">橋本壱崇　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0745711940">0745-71-1940</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2017 年創業</span></div>
+<a class="open" href="https://en-cere.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/en_ceremony" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="34" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">34</span>
+<h2>花吉葬祭社</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0665617783">06-6561-7783</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1934 年創業</span></div>
+<a class="open" href="https://www.naniwa-sougiya.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/hanakichisousaisha" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="35" data-ken="大阪" data-pri="A">
+<header class="ch"><span class="num">35</span>
+<h2>(株)大阪屋</h2>
+<p class="meta">葬儀　大阪　優先度 A</p></header>
+<p class="who2">森克巳　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0723320315">072-332-0315</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1972 年創業</span></div>
+<a class="open" href="http://www.o-sakaya.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/o_sakaya.sougi" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="36" data-ken="奈良" data-pri="A">
+<header class="ch"><span class="num">36</span>
+<h2>(有)竹田花香社</h2>
+<p class="meta">葬儀　奈良　優先度 A</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0744227893">0744-22-7893</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://takedakakousha.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/takeda_kakousha" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="37" data-ken="奈良" data-pri="A">
+<header class="ch"><span class="num">37</span>
+<h2>(有)五條公益社</h2>
+<p class="meta">葬儀　奈良　優先度 A</p></header>
+<p class="who2">吉村幸高　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0747222188">0747-22-2188</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1960 年創業</span></div>
+<a class="open" href="http://funeral-nagomi.com/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/funeral_nagomi" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="38" data-ken="奈良" data-pri="A">
+<header class="ch"><span class="num">38</span>
+<h2>セレミューズ(株)</h2>
+<p class="meta">葬儀　奈良　優先度 A</p></header>
+<p class="who2">鐵東貴和　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0743754444">0743-75-4444</a>
+<div class="dead"><span class="dl">Instagram はあるが TikTok なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1949 年創業</span></div>
+<a class="open" href="http://ceremuse.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<a class="open" href="https://www.instagram.com/ceremuse.nara" target="_blank" rel="noopener">Instagramを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="39" data-ken="兵庫" data-pri="B">
+<header class="ch"><span class="num">39</span>
+<h2>(株)点鬼堂</h2>
+<p class="meta">葬儀　兵庫　優先度 B</p></header>
+<p class="who2">松本明　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0727700042">072-770-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1935 年創業</span></div>
+<a class="open" href="http://www.tenkido.net/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="40" data-ken="和歌山" data-pri="B">
+<header class="ch"><span class="num">40</span>
+<h2>(株)オレンジライフ</h2>
+<p class="meta">葬儀　和歌山　優先度 B</p></header>
+<p class="who2">西岡大樹　社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0737526788">0737-52-6788</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1935 年創業</span></div>
+<a class="open" href="http://www.orange-life.co.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="41" data-ken="和歌山" data-pri="B">
+<header class="ch"><span class="num">41</span>
+<h2>ラポール(株)</h2>
+<p class="meta">葬儀　和歌山　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0734991082">073-499-1082</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1995 年創業</span></div>
+<a class="open" href="https://www.gate-house.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="42" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">42</span>
+<h2>(株)吹公社</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">近藤正人　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0663810042">06-6381-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1962 年創業</span></div>
+<a class="open" href="https://suikosha.ne.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="43" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">43</span>
+<h2>(株)北大阪セレモニー</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0727620402">072-762-0402</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2000 年創業</span></div>
+<a class="open" href="https://kitaosakaceremony.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="44" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">44</span>
+<h2>(株)加納</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">上村　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0668536171">06-6853-6171</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1911 年創業</span></div>
+<a class="open" href="http://www.kk-kanou.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="45" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">45</span>
+<h2>泉屋(株)</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0728509532">072-850-9532</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.izumiya-memorial.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="46" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">46</span>
+<h2>(株)都島葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0669212191">06-6921-2191</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.e-osoushiki.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="47" data-ken="奈良" data-pri="B">
+<header class="ch"><span class="num">47</span>
+<h2>(株)ひかり</h2>
+<p class="meta">葬儀　奈良　優先度 B</p></header>
+<p class="who2">寺口重光　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0745454200">0745-45-4200</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1996 年創業</span></div>
+<a class="open" href="https://hikari-saiten.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="48" data-ken="奈良" data-pri="B">
+<header class="ch"><span class="num">48</span>
+<h2>泉屋(株)香芝メモリアルホール</h2>
+<p class="meta">葬儀　奈良　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0745711035">0745-71-1035</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://izumiya-memorial.jp/index.html" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="49" data-ken="滋賀" data-pri="B">
+<header class="ch"><span class="num">49</span>
+<h2>(株)公益社</h2>
+<p class="meta">葬儀　滋賀　優先度 B</p></header>
+<p class="who2">木川　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0749225000">0749-22-5000</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1950 年創業</span></div>
+<a class="open" href="http://shiga-koekisha.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="50" data-ken="京都" data-pri="B">
+<header class="ch"><span class="num">50</span>
+<h2>(株)公益社</h2>
+<p class="meta">葬儀　京都　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0752214000">075-221-4000</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1938 年創業</span></div>
+<a class="open" href="http://www.koekisha-kyoto.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="51" data-ken="京都" data-pri="B">
+<header class="ch"><span class="num">51</span>
+<h2>(株)まるいち</h2>
+<p class="meta">葬儀　京都　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0754416254">075-441-6254</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1957 年創業</span></div>
+<a class="open" href="http://maruichi-kyoto.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="52" data-ken="京都" data-pri="B">
+<header class="ch"><span class="num">52</span>
+<h2>(株)山長</h2>
+<p class="meta">葬儀　京都　優先度 B</p></header>
+<p class="who2">山田　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0758611422">075-861-1422</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.yamacho-kaikan.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="53" data-ken="京都" data-pri="B">
+<header class="ch"><span class="num">53</span>
+<h2>(株)のじり葬儀店</h2>
+<p class="meta">葬儀　京都　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0756114211">075-611-4211</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1987 年創業</span></div>
+<a class="open" href="http://nojiri-kyoto.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="54" data-ken="京都" data-pri="B">
+<header class="ch"><span class="num">54</span>
+<h2>(有)城陽葬祭杉村</h2>
+<p class="meta">葬儀　京都　優先度 B</p></header>
+<p class="who2">杉村等　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0774522140">0774-52-2140</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://joyo-sugimura.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="55" data-ken="兵庫" data-pri="B">
+<header class="ch"><span class="num">55</span>
+<h2>(株)甲子園花力</h2>
+<p class="meta">葬儀　兵庫　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0798670398">0798-67-0398</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1970 年創業</span></div>
+<a class="open" href="https://www.cleri-nishinomiya.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="56" data-ken="兵庫" data-pri="B">
+<header class="ch"><span class="num">56</span>
+<h2>(有)花福葬祭</h2>
+<p class="meta">葬儀　兵庫　優先度 B</p></header>
+<p class="who2">北條満祐　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0788614744">078-861-4744</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1927 年創業</span></div>
+<a class="open" href="http://www.hanafukusousai.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="57" data-ken="和歌山" data-pri="B">
+<header class="ch"><span class="num">57</span>
+<h2>(株)公世社花平</h2>
+<p class="meta">葬儀　和歌山　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0736320308">0736-32-0308</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.hanahira.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="58" data-ken="和歌山" data-pri="B">
+<header class="ch"><span class="num">58</span>
+<h2>(有)メモリアルウエスト</h2>
+<p class="meta">葬儀　和歌山　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0738232688">0738-23-2688</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">和歌山</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1959 年創業</span></div>
+<a class="open" href="https://www.memorialwest.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="59" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">59</span>
+<h2>(株)高槻葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">吉本幹雄　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0726820409">072-682-0409</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1972 年創業</span></div>
+<a class="open" href="https://www.takatsukisousai.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="60" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">60</span>
+<h2>(株)サンエース葬祭式場パルティ</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0728971144">072-897-1144</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2001 年創業</span></div>
+<a class="open" href="https://www.parti-f.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="61" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">61</span>
+<h2>(株)花廣</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0726251145">072-625-1145</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1897 年創業</span></div>
+<a class="open" href="https://www.hanahiro.biz/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="62" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">62</span>
+<h2>(株)千里万博葬儀会館</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0668770042">06-6877-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1990 年創業</span></div>
+<a class="open" href="https://www.sougi-senribanpaku.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="63" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">63</span>
+<h2>(有)東阪社</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表取締役 を呼んでもらう</p>
+<a class="tel" href="tel:0729812984">072-981-2984</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1927 年創業</span></div>
+<a class="open" href="https://tohansya.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="64" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">64</span>
+<h2>(株)公益社</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">野呂裕一　代表取締役会長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0662083331">06-6208-3331</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.koekisha.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="65" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">65</span>
+<h2>(株)阿波弥</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">熊田昭夫　代表取締役社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0665310042">06-6531-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1745 年創業</span></div>
+<a class="open" href="http://www.awaya-ceremony.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="66" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">66</span>
+<h2>(有)友渕葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0669220042">06-6922-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1985 年創業</span></div>
+<a class="open" href="https://www.tomobuchi.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="67" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">67</span>
+<h2>(有)関井葬儀社</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0669343545">06-6934-3545</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1980 年創業</span></div>
+<a class="open" href="https://minorikaikan.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="68" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">68</span>
+<h2>田島葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">理事長 を呼んでもらう</p>
+<a class="tel" href="tel:0667181021">06-6718-1021</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://tashima-sousai.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="69" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">69</span>
+<h2>(株)ヨシノ</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">吉野晃生　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0667121286">06-6712-1286</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1974 年創業</span></div>
+<a class="open" href="https://yoshino-sougi.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="70" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">70</span>
+<h2>(株)三法社</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">山田健一　代表取締役社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0669119121">06-6911-9121</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1981 年創業</span></div>
+<a class="open" href="https://osaka-sanpo.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="71" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">71</span>
+<h2>(株)ラストステージ（むらかみ）</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">村上亮介　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0667144449">06-6714-4449</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1999 年創業</span></div>
+<a class="open" href="https://laststage.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="72" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">72</span>
+<h2>(株)花利</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">神谷礼子　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0729560212">072-956-0212</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://hanatoshi.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="73" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">73</span>
+<h2>(株)総本社山川公益社</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">辻戸　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0722410042">072-241-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1946 年創業</span></div>
+<a class="open" href="https://kk-yamakawa.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="74" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">74</span>
+<h2>(株)花音</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">井上和哉　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0722610042">072-261-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1933 年創業</span></div>
+<a class="open" href="http://www.hanaoto.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="75" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">75</span>
+<h2>(株)日本セレモニー辻</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">辻寛子　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0725460042">0725-46-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://nihon-seremony-tuji.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="76" data-ken="大阪" data-pri="B">
+<header class="ch"><span class="num">76</span>
+<h2>(有)浦田</h2>
+<p class="meta">葬儀　大阪　優先度 B</p></header>
+<p class="who2">浦田幸造　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0724650832">072-465-0832</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1930 年創業</span></div>
+<a class="open" href="https://urata-kaikan.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="77" data-ken="奈良" data-pri="B">
+<header class="ch"><span class="num">77</span>
+<h2>(株)公益社</h2>
+<p class="meta">葬儀　奈良　優先度 B</p></header>
+<p class="who2">河口昌司　代表取締役社長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0742232115">0742-23-2115</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1951 年創業</span></div>
+<a class="open" href="http://www.narakoueki.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="78" data-ken="奈良" data-pri="B">
+<header class="ch"><span class="num">78</span>
+<h2>(株)メモワージュ</h2>
+<p class="meta">葬儀　奈良　優先度 B</p></header>
+<p class="who2">山中宏亮　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0743620612">0743-62-0612</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1935 年創業</span></div>
+<a class="open" href="http://www.yamanakasougi.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="79" data-ken="奈良" data-pri="B">
+<header class="ch"><span class="num">79</span>
+<h2>(株)大西花香社</h2>
+<p class="meta">葬儀　奈良　優先度 B</p></header>
+<p class="who2">大西啓夫　会長 さん を呼んでもらう</p>
+<a class="tel" href="tel:0745330088">0745-33-0088</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1953 年創業</span></div>
+<a class="open" href="http://etowa.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="80" data-ken="滋賀" data-pri="B">
+<header class="ch"><span class="num">80</span>
+<h2>(有)本庄造花店</h2>
+<p class="meta">葬儀　滋賀　優先度 B</p></header>
+<p class="who2">小堀仁　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0749621011">0749-62-1011</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1925 年創業</span></div>
+<a class="open" href="http://sougetsu-honjou.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="81" data-ken="滋賀" data-pri="B">
+<header class="ch"><span class="num">81</span>
+<h2>(株)滋賀葬祭</h2>
+<p class="meta">葬儀　滋賀　優先度 B</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0775522405">077-552-2405</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.shigasousai.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="82" data-ken="滋賀" data-pri="B">
+<header class="ch"><span class="num">82</span>
+<h2>(株)水口福祉社</h2>
+<p class="meta">葬儀　滋賀　優先度 B</p></header>
+<p class="who2">池元　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0748623055">0748-62-3055</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1972 年創業</span></div>
+<a class="open" href="http://www.shiga-sokyo.jp/sougisha/minakuchi_fukushisha/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="83" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">83</span>
+<h2>(株)セレモニーまつだ</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0772462264">0772-46-2264</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1950 年創業</span></div>
+<a class="open" href="http://www.amanohara.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="84" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">84</span>
+<h2>(株)公益サービスセンター</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">松井信五　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0755513422">075-551-3422</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1972 年創業</span></div>
+<a class="open" href="http://www.kyoto-sougi.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="85" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">85</span>
+<h2>(株)京都セレモニー</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">松井　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0752218400">075-221-8400</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1994 年創業</span></div>
+<a class="open" href="http://www.kyoto-ceremony.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="86" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">86</span>
+<h2>(株)アシス</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0759324242">075-932-4242</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.assith.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="87" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">87</span>
+<h2>(株)宇治葬祭駕辰</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0774318072">0774-31-8072</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.kagotatu.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="88" data-ken="兵庫" data-pri="C">
+<header class="ch"><span class="num">88</span>
+<h2>(株)阪神セレモニー</h2>
+<p class="meta">葬儀　兵庫　優先度 C</p></header>
+<p class="who2">芝泰雄　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0664110189">06-6411-0189</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://a-sogi.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="89" data-ken="兵庫" data-pri="C">
+<header class="ch"><span class="num">89</span>
+<h2>(株)宝塚公益社</h2>
+<p class="meta">葬儀　兵庫　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0797864242">0797-86-4242</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1957 年創業</span></div>
+<a class="open" href="https://www.cleri.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="90" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">90</span>
+<h2>(株)共益社</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0727232347">072-723-2347</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://kyoueki.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="91" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">91</span>
+<h2>(株)大阪葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0663337113">06-6333-7113</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.osakasousai.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="92" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">92</span>
+<h2>(株)やすらぎ祭典妙蓮社</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0663348950">06-6334-8950</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1991 年創業</span></div>
+<a class="open" href="http://ceremonykokoro.com/myourensya.index.html" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="93" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">93</span>
+<h2>水熊葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">住田真弓　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0669813685">06-6981-3685</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1860 年創業</span></div>
+<a class="open" href="http://mizukuma-sousai.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="94" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">94</span>
+<h2>(有)野本</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">野本栄一　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0667580904">06-6758-0904</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1984 年創業</span></div>
+<a class="open" href="https://www.0120-06-4142.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="95" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">95</span>
+<h2>(株)駕駒</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">西川佳人　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0667622203">06-6762-2203</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://www.kagokoma.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="96" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">96</span>
+<h2>(株)駕平葬儀社</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">池田秀孝　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0665820042">06-6582-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1950 年創業</span></div>
+<a class="open" href="https://www.kagohei.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="97" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">97</span>
+<h2>(株)花幸</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0729721015">072-972-1015</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1949 年創業</span></div>
+<a class="open" href="http://www.hanakoh.com/cgi-bin/index.cgi" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="98" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">98</span>
+<h2>(有)寺内葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0729391996">072-939-1996</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="https://t-0983.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="99" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">99</span>
+<h2>(株)花仙葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">石田誠一　代表 さん を呼んでもらう</p>
+<a class="tel" href="tel:0721232238">0721-23-2238</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1948 年創業</span></div>
+<a class="open" href="http://hanasen-sousai.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="100" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">100</span>
+<h2>(株)河内葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0721535155">0721-53-5155</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1948 年創業</span></div>
+<a class="open" href="https://www.kawachisousai.co.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="101" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">101</span>
+<h2>(株)オフィスシオン</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">寺本恵美子　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0742646070">0742-64-6070</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2000 年創業</span></div>
+<a class="open" href="http://www.office-sion.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="102" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">102</span>
+<h2>天葬祭</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0745823458">0745-82-3458</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2004 年創業</span></div>
+<a class="open" href="https://tennsousai.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="103" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">103</span>
+<h2>(株)有宏社</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">鈴木勝士　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0745522442">0745-52-2442</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1934 年創業</span></div>
+<a class="open" href="http://www.yukosha-sogi.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="104" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">104</span>
+<h2>(株)平成公益社</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">平田　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0744282050">0744-28-2050</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1988 年創業</span></div>
+<a class="open" href="http://www.heiseikoekisya.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="105" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">105</span>
+<h2>(株)令和</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0772722002">0772-72-2002</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1988 年創業</span></div>
+<a class="open" href="http://www.mukaisousai.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="106" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">106</span>
+<h2>山城葬祭(株)現丸屋</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">小川保善　代表取締役 さん を呼んでもらう</p>
+<a class="tel" href="tel:0774822064">0774-82-2064</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.genmaruya.jp" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="107" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">107</span>
+<h2>(有)阪口</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0774762146">0774-76-2146</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://luna-hall.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="108" data-ken="兵庫" data-pri="C">
+<header class="ch"><span class="num">108</span>
+<h2>(株)花常本店</h2>
+<p class="meta">葬儀　兵庫　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0783411153">078-341-1153</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://hanatune-honten.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="109" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">109</span>
+<h2>(株)北摂工芸社</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0727340676">072-734-0676</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://sougi.bestnet.ne.jp/hokusetsukogei-osaka/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="110" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">110</span>
+<h2>箕面公社(有)</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0727214142">072-721-4142</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://sougi.bestnet.ne.jp/minohkosha-minoh/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="111" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">111</span>
+<h2>(有)とよの</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0668417642">06-6841-7642</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1973 年創業</span></div>
+<a class="open" href="http://www.kazokusou-hall.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="112" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">112</span>
+<h2>(株)花松松田</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0666313586">06-6631-3586</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://hanamatsu.jp/index.html" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="113" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">113</span>
+<h2>(株)丸真葬祭</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0667544440">06-6754-4440</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1954 年創業</span></div>
+<a class="open" href="http://www.marushin-sousai.jp/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="114" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">114</span>
+<h2>(株)金田佛心社</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0724520042">072-452-0042</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／1945 年創業</span></div>
+<a class="open" href="http://www.bussinden.com" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="115" data-ken="大阪" data-pri="C">
+<header class="ch"><span class="num">115</span>
+<h2>(株)ＳＩＯＮ</h2>
+<p class="meta">葬儀　大阪　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0724259088">072-425-9088</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">大阪</span>
+<span class="why">自社サイトあり＝Web集客に投資済み／2021 年創業</span></div>
+<a class="open" href="https://sion-osohshiki.com/" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="116" data-ken="滋賀" data-pri="C">
+<header class="ch"><span class="num">116</span>
+<h2>(有)醒井フラワー</h2>
+<p class="meta">葬儀　滋賀　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0749543131">0749-54-3131</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">滋賀</span>
+<span class="why">自社サイトあり＝Web集客に投資済み</span></div>
+<a class="open" href="http://www.e-sogi.ne.jp/hp/samegai.htm" target="_blank" rel="noopener">HPを開く →</a>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="117" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">117</span>
+<h2>駕政葬儀社</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0756910826">075-691-0826</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="118" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">118</span>
+<h2>(株)松本仏具店</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0771220279">0771-22-0279</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="119" data-ken="京都" data-pri="C">
+<header class="ch"><span class="num">119</span>
+<h2>(有)花福</h2>
+<p class="meta">葬儀　京都　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0774822016">0774-82-2016</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">京都</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="120" data-ken="兵庫" data-pri="C">
+<header class="ch"><span class="num">120</span>
+<h2>(株)エルブレイン</h2>
+<p class="meta">葬儀　兵庫　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0795634142">079-563-4142</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">兵庫</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="121" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">121</span>
+<h2>(有)花富</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0745235085">0745-23-5085</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="122" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">122</span>
+<h2>(有)久保花店</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0747526677">0747-52-6677</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+<article class="card" data-result="" data-i="123" data-ken="奈良" data-pri="C">
+<header class="ch"><span class="num">123</span>
+<h2>(株)南都公益社</h2>
+<p class="meta">葬儀　奈良　優先度 C</p></header>
+<p class="who2">代表の方につないでもらう</p>
+<a class="tel" href="tel:0744433724">0744-43-3724</a>
+<div class="dead"><span class="dl">SNS一切なし</span>
+<span class="du">奈良</span>
+<span class="why">自社サイト無し＝Web未着手</span></div>
+<div class="acts"><button class="res" data-v="不在" onclick="mark(this)">不在</button><button class="res" data-v="受付止まり" onclick="mark(this)">受付止まり</button><button class="res" data-v="決裁者と話した" onclick="mark(this)">決裁者と話した</button><button class="res" data-v="アポ" onclick="mark(this)">アポ</button><button class="res" data-v="動画提供OK" onclick="mark(this)">動画提供OK</button><button class="res" data-v="NG" onclick="mark(this)">NG</button></div>
+<div class="done"><b class="rt"></b><span class="rd"></span>
+<button class="undo" onclick="undo(this)">取消</button></div>
+<input class="memo" type="text" placeholder="次アクション（例：10/15 17時に再架電）"
+ onchange="memo(this)" value="">
+</article>
+
+</div>
+
+<p class="foot">葬儀　近畿　123件。求人・公開情報から機械で収集し、4軸で優先度を付けています。<br>結果ボタンを押すと自動で宮崎さんに送信されます。<span id="q"></span></p>
+</div></div>
+
+<script>
+function today(){const d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+const KEY='call-sougi-48ad152b51e7';
+const QKEY='call-sougi-48ad152b51e7-queue';
+const WKEY='call-who';
+let WHO = (localStorage.getItem(WKEY)||'').trim();
+
+function showWho(){
+  document.getElementById('whoname').textContent = WHO ? WHO+'さん' : '—';
+}
+function askWho(manual){
+  const g=document.getElementById('gate');
+  document.getElementById('whoin').value = manual ? WHO : '';
+  document.getElementById('whoerr').textContent='';
+  g.classList.add('on');
+  setTimeout(()=>document.getElementById('whoin').focus(),50);
+}
+function saveWho(){
+  const v=document.getElementById('whoin').value.trim();
+  if(v.length<1){ document.getElementById('whoerr').textContent='お名前を入れてください。'; return; }
+  if(v.length>20){ document.getElementById('whoerr').textContent='短めでお願いします（20文字まで）。'; return; }
+  WHO=v; try{ localStorage.setItem(WKEY,v); }catch(e){}
+  document.getElementById('gate').classList.remove('on');
+  showWho();
+  flush();
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter' && document.getElementById('gate').classList.contains('on')) saveWho();
+});
+const FORM='https://docs.google.com/forms/d/e/1FAIpQLSfhpkW89vWEFWjkrgWr1qx0UXhHTjksiSmCa9IOyfcJcQO8bQ/formResponse';
+const F={who:'entry.918375088',name:'entry.752989491',tel:'entry.729330221',
+         res:'entry.1257351313',memo:'entry.1976499710',no:'entry.103122825'};
+
+function qGet(){ try{ return JSON.parse(localStorage.getItem(QKEY)||'[]'); }catch(e){ return []; } }
+function qSet(a){ try{ localStorage.setItem(QKEY, JSON.stringify(a)); }catch(e){} qShow(); }
+function qShow(){
+  const n=qGet().length, el=document.getElementById('q');
+  if(el) el.textContent = n ? '（未送信 '+n+'件。電波が戻ると自動で送られます）' : '';
+}
+
+function enqueue(card, result){
+  qSet(qGet().concat([{
+    no: card.dataset.i,
+    name: card.querySelector('h2').textContent.trim(),
+    tel: card.querySelector('.tel').textContent.trim(),
+    res: result,
+    memo: card.querySelector('.memo').value || ''
+  }]));
+  flush();
+}
+
+let sending=false;
+function flush(){
+  if(sending || !WHO) return;
+  const q=qGet(); if(!q.length){ qShow(); return; }
+  sending=true;
+  const x=q[0];
+  const b=new URLSearchParams();
+  b.append(F.who,WHO); b.append(F.name,x.name); b.append(F.tel,x.tel);
+  b.append(F.res,x.res); b.append(F.memo,x.memo); b.append(F.no,x.no);
+  fetch(FORM,{method:'POST',mode:'no-cors',body:b})
+    .then(()=>{ qSet(qGet().slice(1)); sending=false; flush(); })
+    .catch(()=>{ sending=false; });
+}
+window.addEventListener('online', flush);
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) flush(); });
+
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){} }
+function put(i,k,v){ const o=load(); o[i]=o[i]||{}; o[i][k]=v; save(o); }
+
+function mark(b){
+  const c=b.closest('.card');
+  const d=today();
+  c.setAttribute('data-result', b.dataset.v);
+  c.querySelector('.rt').textContent = b.dataset.v;
+  c.querySelector('.rd').textContent = d;
+  put(c.dataset.i,'r',b.dataset.v); put(c.dataset.i,'d',d);
+  enqueue(c, b.dataset.v);
+  count();
+}
+function undo(b){
+  const c=b.closest('.card');
+  c.setAttribute('data-result','');
+  c.querySelector('.rt').textContent='';
+  c.querySelector('.rd').textContent='';
+  put(c.dataset.i,'r',''); put(c.dataset.i,'d','');
+  enqueue(c, '取消');
+  count();
+}
+function memo(i){
+  const c=i.closest('.card');
+  i.setAttribute('value', i.value);
+  put(c.dataset.i,'m',i.value);
+  if(c.getAttribute('data-result')) enqueue(c, c.getAttribute('data-result'));
+}
+
+function restore(){
+  const o=load();
+  document.querySelectorAll('.card').forEach(c=>{
+    const x=o[c.dataset.i]; if(!x) return;
+    if(x.r){ c.setAttribute('data-result',x.r);
+      c.querySelector('.rt').textContent=x.r;
+      c.querySelector('.rd').textContent=x.d||''; }
+    if(x.m){ const i=c.querySelector('.memo'); i.value=x.m; i.setAttribute('value',x.m); }
+  });
+}
+
+function report(btn){
+  const cards=[...document.querySelectorAll('.card')].filter(c=>c.getAttribute('data-result'));
+  if(!cards.length){ btn.textContent='まだ結果がありません'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); return; }
+  const cnt=v=>cards.filter(c=>c.getAttribute('data-result')===v).length;
+  let t='【'+(WHO||'担当')+'】'+today()+' 架電結果\n';
+  t+='架電 '+cards.length+'／アポ '+cnt('アポ')+'／決裁者 '+cnt('決裁者と話した')+'／NG '+cnt('NG')+'\n';
+  const pick=cards.filter(c=>['アポ','決裁者と話した'].includes(c.getAttribute('data-result')) || c.querySelector('.memo').value);
+  if(pick.length){
+    t+='\n';
+    pick.forEach(c=>{
+      const m=c.querySelector('.memo').value;
+      t+='・'+c.querySelector('h2').textContent.trim()+'（'+c.getAttribute('data-result')+'）'+(m?' '+m:'')+'\n';
+    });
+  }
+  const done=()=>{ btn.textContent='コピーしました'; setTimeout(()=>btn.textContent='結果をコピー（宮崎さんに送る用）',1800); };
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,()=>fb(t,done)); }
+  else fb(t,done);
+}
+function fb(t,cb){
+  const a=document.createElement('textarea'); a.value=t;
+  a.style.cssText='position:fixed;top:0;left:0;opacity:0';
+  document.body.appendChild(a); a.focus(); a.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(a); cb();
+}
+function flt(b){
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  document.getElementById('list').setAttribute('data-local-filter', b.dataset.f);
+}
+function vw(b){
+  document.querySelectorAll('.view').forEach(t=>t.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  document.getElementById('app').setAttribute('data-local-view', b.dataset.v);
+  window.scrollTo(0,0);
+}
+function count(){
+  const cards=[...document.querySelectorAll('.card')];
+  const done=cards.filter(c=>c.getAttribute('data-result'));
+  document.getElementById('s-left').textContent=cards.length-done.length;
+  document.getElementById('s-done').textContent=done.length;
+  document.getElementById('s-apo').textContent=done.filter(c=>c.getAttribute('data-result')==='アポ').length;
+  document.getElementById('s-ng').textContent=done.filter(c=>c.getAttribute('data-result')==='NG').length;
+  document.getElementById('s-bar').style.width=(done.length/cards.length*100)+'%';
+}
+restore();
+count();
+qShow();
+showWho();
+if(WHO){ flush(); } else { askWho(0); }
+</script>
+
+<style>
+.card[data-hide="1"]{display:none!important}
+#f-ken,#f-pri{flex:1;min-width:0;font:inherit;padding:9px 10px;border-radius:10px;
+  border:1px solid #2f3a4a;background:#131a24;color:#e6edf3}
+</style>
+<script>
+// テンプレに無い絞り込みを後から足す。表示/非表示は data-hide でやり、
+// count() は隠れているカードを数えないように上書きする。
+function narrow(){
+  const k=document.getElementById('f-ken').value,
+        p=document.getElementById('f-pri').value;
+  document.querySelectorAll('.card').forEach(c=>{
+    const ng=(k && c.dataset.ken!==k)||(p && c.dataset.pri!==p);
+    c.setAttribute('data-hide', ng?'1':'');
+  });
+  count();
+}
+function count(){
+  const cards=[...document.querySelectorAll('.card')].filter(c=>c.getAttribute('data-hide')!=='1');
+  const done=cards.filter(c=>c.getAttribute('data-result'));
+  const g=id=>document.getElementById(id);
+  g('s-left').textContent=cards.length-done.length;
+  g('s-done').textContent=done.length;
+  g('s-apo').textContent=done.filter(c=>['アポ','動画提供OK'].includes(c.getAttribute('data-result'))).length;
+  g('s-ng').textContent=done.filter(c=>c.getAttribute('data-result')==='NG').length;
+  const bar=g('s-bar'); if(bar) bar.style.width=(cards.length?done.length/cards.length*100:0)+'%';
+}
+count();
+</script>
+</body>
+</html>
